@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 Circuit Guesser</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <!-- Home Screen -->
+        <div id="home-screen" class="screen active">
+            <div class="hero">
+                <h1>F1 CIRCUIT GUESSER</h1>
+                <p>Test your knowledge of Formula 1 track layouts.</p>
+            </div>
+            
+            <div class="modes-container">
+                <button id="btn-easy-mode" class="mode-btn">
+                    <h2>EASY MODE</h2>
+                    <p>Select the correct circuit from 4 options.</p>
+                </button>
+                <button id="btn-hard-mode" class="mode-btn">
+                    <h2>HARD MODE</h2>
+                    <p>Type the correct circuit name.</p>
+                </button>
+                <button id="btn-3corners-mode" class="mode-btn">
+                    <h2>3 CORNERS MODE</h2>
+                    <p>Guess the circuit from just 3 corners.</p>
+                </button>
+            </div>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="game-screen" class="screen">
+            <header>
+                <button id="btn-back" class="btn-secondary">← Back</button>
+                <div class="score-display">Score: <span id="score">0</span></div>
+            </header>
+            
+            <div class="game-container">
+                <div class="circuit-display">
+                    <div id="circuit-svg-container"></div>
+                </div>
+
+                <!-- Easy Mode Controls -->
+                <div id="easy-controls" class="controls hidden">
+                    <div class="options-grid" id="options-grid">
+                        <!-- Buttons injected via JS -->
+                    </div>
+                </div>
+
+                <!-- Hard Mode Controls -->
+                <div id="hard-controls" class="controls hidden">
+                    <form id="hard-form">
+                        <input type="text" id="circuit-input" placeholder="Type circuit name..." autocomplete="off" />
+                        <button type="submit" id="btn-submit" class="btn-primary">Guess</button>
+                    </form>
+                    <div id="hard-hints" class="hints">
+                        <p>Aliases allowed (e.g., "Spa", "Monza")</p>
+                    </div>
+                </div>
+                
+                <!-- Feedback overlay -->
+                <div id="feedback-container" class="feedback hidden">
+                    <h2 id="feedback-title">Correct!</h2>
+                    <p id="feedback-desc">It was Monza.</p>
+                    <button id="btn-next" class="btn-primary">Next Circuit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

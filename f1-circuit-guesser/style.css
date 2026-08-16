@@ -1,0 +1,337 @@
+:root {
+    --bg-color: #15151e;
+    --surface-color: #1f1f2e;
+    --primary-color: #e10600; /* F1 Red */
+    --primary-hover: #ff0b04;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0b0;
+    --success-color: #00d2be; /* Mercedes cyanish for success */
+    --error-color: #e10600;
+    
+    --font-heading: 'Racing Sans One', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+#app {
+    width: 100%;
+    max-width: 800px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.screen {
+    display: none;
+    flex-direction: column;
+    flex: 1;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.screen.active {
+    display: flex;
+}
+
+/* Home Screen */
+.hero {
+    text-align: center;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.hero h1 {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    color: var(--primary-color);
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+}
+
+.modes-container {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.mode-btn {
+    background-color: var(--surface-color);
+    border: 2px solid transparent;
+    border-radius: 12px;
+    padding: 2rem;
+    width: 300px;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s ease;
+    color: var(--text-primary);
+}
+
+.mode-btn h2 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+}
+
+.mode-btn p {
+    font-family: var(--font-body);
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+.mode-btn:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(225, 6, 0, 0.15);
+}
+
+/* Game Screen */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.score-display {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    position: relative;
+}
+
+.circuit-display {
+    background-color: var(--surface-color);
+    border-radius: 16px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 600px;
+    aspect-ratio: 16/9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+#circuit-svg-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#circuit-svg-container svg {
+    max-width: 100%;
+    max-height: 100%;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.1));
+}
+
+#circuit-svg-container path {
+    transition: stroke-dasharray 0.3s, stroke-dashoffset 0.3s;
+}
+
+.controls {
+    width: 100%;
+    max-width: 600px;
+}
+
+.controls.hidden {
+    display: none;
+}
+
+/* Easy Mode Options */
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.option-btn {
+    background-color: var(--surface-color);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    padding: 1.25rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.option-btn:hover:not(:disabled) {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.option-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.option-btn.correct {
+    background-color: var(--success-color);
+    border-color: var(--success-color);
+    color: #000;
+}
+
+.option-btn.wrong {
+    background-color: var(--error-color);
+    border-color: var(--error-color);
+}
+
+/* Hard Mode Form */
+#hard-form {
+    display: flex;
+    gap: 1rem;
+}
+
+#circuit-input {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    font-size: 1.2rem;
+    background-color: var(--surface-color);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-family: var(--font-body);
+}
+
+#circuit-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.hints {
+    margin-top: 1rem;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Common Buttons */
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: var(--font-heading);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    letter-spacing: 1px;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-secondary);
+    border: 1px solid var(--text-secondary);
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255,255,255,0.1);
+    color: var(--text-primary);
+}
+
+/* Feedback Overlay */
+.feedback {
+    margin-top: 2rem;
+    text-align: center;
+    animation: slideUp 0.3s ease-out;
+    background-color: var(--surface-color);
+    padding: 2rem;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.feedback.hidden {
+    display: none;
+}
+
+.feedback h2 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.feedback.success h2 {
+    color: var(--success-color);
+}
+
+.feedback.error h2 {
+    color: var(--error-color);
+}
+
+.feedback p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+    .options-grid {
+        grid-template-columns: 1fr;
+    }
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    .modes-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    #hard-form {
+        flex-direction: column;
+    }
+}

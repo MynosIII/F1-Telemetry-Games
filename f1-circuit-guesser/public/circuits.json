@@ -1,0 +1,786 @@
+[
+  {
+    "layouts": [
+      "adelaide-1"
+    ],
+    "id": "adelaide",
+    "name": "Adelaide",
+    "fullName": "Adelaide Street Circuit",
+    "placeName": "Adelaide"
+  },
+  {
+    "layouts": [
+      "aida-1"
+    ],
+    "id": "aida",
+    "name": "Aida",
+    "fullName": "Okayama International Circuit",
+    "placeName": "Aida"
+  },
+  {
+    "layouts": [
+      "ain-diab-1"
+    ],
+    "id": "ain-diab",
+    "name": "Ain-Diab",
+    "fullName": "Ain-Diab Circuit",
+    "placeName": "Casablanca"
+  },
+  {
+    "layouts": [
+      "aintree-1"
+    ],
+    "id": "aintree",
+    "name": "Aintree",
+    "fullName": "Aintree Motor Racing Circuit",
+    "placeName": "Aintree"
+  },
+  {
+    "layouts": [
+      "anderstorp-1"
+    ],
+    "id": "anderstorp",
+    "name": "Anderstorp Raceway",
+    "fullName": "Anderstorp Raceway",
+    "placeName": "Anderstorp"
+  },
+  {
+    "layouts": [
+      "austin-1"
+    ],
+    "id": "austin",
+    "name": "Americas",
+    "fullName": "Circuit of the Americas",
+    "placeName": "Austin"
+  },
+  {
+    "layouts": [
+      "avus-1"
+    ],
+    "id": "avus",
+    "name": "AVUS",
+    "fullName": "AVUS",
+    "placeName": "Berlin"
+  },
+  {
+    "layouts": [
+      "bahrain-1",
+      "bahrain-2",
+      "bahrain-3"
+    ],
+    "id": "bahrain",
+    "name": "Bahrain",
+    "fullName": "Bahrain International Circuit",
+    "placeName": "Sakhir"
+  },
+  {
+    "layouts": [
+      "baku-1"
+    ],
+    "id": "baku",
+    "name": "Baku",
+    "fullName": "Baku City Circuit",
+    "placeName": "Baku"
+  },
+  {
+    "layouts": [
+      "brands-hatch-1",
+      "brands-hatch-2"
+    ],
+    "id": "brands-hatch",
+    "name": "Brands Hatch",
+    "fullName": "Brands Hatch",
+    "placeName": "Fawkham"
+  },
+  {
+    "layouts": [
+      "bremgarten-1"
+    ],
+    "id": "bremgarten",
+    "name": "Bremgarten",
+    "fullName": "Circuit Bremgarten",
+    "placeName": "Bern"
+  },
+  {
+    "layouts": [
+      "buddh-1"
+    ],
+    "id": "buddh",
+    "name": "Buddh",
+    "fullName": "Buddh International Circuit",
+    "placeName": "Greater Noida"
+  },
+  {
+    "layouts": [
+      "buenos-aires-1",
+      "buenos-aires-2",
+      "buenos-aires-3",
+      "buenos-aires-4"
+    ],
+    "id": "buenos-aires",
+    "name": "Juan y Oscar G\u00e1lvez",
+    "fullName": "Aut\u00f3dromo Juan y Oscar G\u00e1lvez",
+    "placeName": "Buenos Aires"
+  },
+  {
+    "layouts": [
+      "bugatti-1"
+    ],
+    "id": "bugatti",
+    "name": "Bugatti",
+    "fullName": "Bugatti Circuit",
+    "placeName": "Le Mans"
+  },
+  {
+    "layouts": [
+      "caesars-palace-1"
+    ],
+    "id": "caesars-palace",
+    "name": "Caesars Palace",
+    "fullName": "Caesars Palace",
+    "placeName": "Las Vegas"
+  },
+  {
+    "layouts": [
+      "catalunya-1",
+      "catalunya-2",
+      "catalunya-3",
+      "catalunya-4",
+      "catalunya-5",
+      "catalunya-6"
+    ],
+    "id": "catalunya",
+    "name": "Catalunya",
+    "fullName": "Circuit de Barcelona-Catalunya",
+    "placeName": "Montmel\u00f3"
+  },
+  {
+    "layouts": [
+      "clermont-ferrand-1"
+    ],
+    "id": "clermont-ferrand",
+    "name": "Charade",
+    "fullName": "Charade Circuit",
+    "placeName": "Clermont-Ferrand"
+  },
+  {
+    "layouts": [
+      "dallas-1"
+    ],
+    "id": "dallas",
+    "name": "Fair Park",
+    "fullName": "Fair Park",
+    "placeName": "Dallas"
+  },
+  {
+    "layouts": [
+      "detroit-1",
+      "detroit-2"
+    ],
+    "id": "detroit",
+    "name": "Detroit",
+    "fullName": "Detroit Street Circuit",
+    "placeName": "Detroit"
+  },
+  {
+    "layouts": [
+      "dijon-1",
+      "dijon-2"
+    ],
+    "id": "dijon",
+    "name": "Dijon-Prenois",
+    "fullName": "Dijon-Prenois",
+    "placeName": "Dijon"
+  },
+  {
+    "layouts": [
+      "donington-1"
+    ],
+    "id": "donington",
+    "name": "Donington Park",
+    "fullName": "Donington Park",
+    "placeName": "Leicestershire"
+  },
+  {
+    "layouts": [
+      "east-london-1"
+    ],
+    "id": "east-london",
+    "name": "Prince George",
+    "fullName": "Prince George Circuit",
+    "placeName": "East London"
+  },
+  {
+    "layouts": [
+      "estoril-1",
+      "estoril-2"
+    ],
+    "id": "estoril",
+    "name": "Estoril",
+    "fullName": "Aut\u00f3dromo do Estoril",
+    "placeName": "Estoril"
+  },
+  {
+    "layouts": [
+      "fuji-1",
+      "fuji-2"
+    ],
+    "id": "fuji",
+    "name": "Fuji",
+    "fullName": "Fuji Speedway",
+    "placeName": "Oyama"
+  },
+  {
+    "layouts": [
+      "hockenheimring-1",
+      "hockenheimring-2",
+      "hockenheimring-3",
+      "hockenheimring-4"
+    ],
+    "id": "hockenheimring",
+    "name": "Hockenheimring",
+    "fullName": "Hockenheimring",
+    "placeName": "Hockenheim"
+  },
+  {
+    "layouts": [
+      "hungaroring-1",
+      "hungaroring-2",
+      "hungaroring-3"
+    ],
+    "id": "hungaroring",
+    "name": "Hungaroring",
+    "fullName": "Hungaroring",
+    "placeName": "Budapest"
+  },
+  {
+    "layouts": [
+      "imola-1",
+      "imola-2",
+      "imola-3"
+    ],
+    "id": "imola",
+    "name": "Enzo e Dino Ferrari",
+    "fullName": "Autodromo Internazionale Enzo e Dino Ferrari",
+    "placeName": "Imola"
+  },
+  {
+    "layouts": [
+      "indianapolis-1",
+      "indianapolis-2"
+    ],
+    "id": "indianapolis",
+    "name": "Indianapolis",
+    "fullName": "Indianapolis Motor Speedway",
+    "placeName": "Indianapolis"
+  },
+  {
+    "layouts": [
+      "interlagos-1",
+      "interlagos-2"
+    ],
+    "id": "interlagos",
+    "name": "Jos\u00e9 Carlos Pace",
+    "fullName": "Aut\u00f3dromo Jos\u00e9 Carlos Pace",
+    "placeName": "S\u00e3o Paulo"
+  },
+  {
+    "layouts": [
+      "istanbul-1"
+    ],
+    "id": "istanbul",
+    "name": "Istanbul Park",
+    "fullName": "Istanbul Park",
+    "placeName": "Istanbul"
+  },
+  {
+    "layouts": [
+      "jacarepagua-1"
+    ],
+    "id": "jacarepagua",
+    "name": "Nelson Piquet",
+    "fullName": "Aut\u00f3dromo Internacional Nelson Piquet",
+    "placeName": "Rio de Janeiro"
+  },
+  {
+    "layouts": [
+      "jarama-1",
+      "jarama-2"
+    ],
+    "id": "jarama",
+    "name": "Jarama",
+    "fullName": "Circuito del Jarama",
+    "placeName": "Madrid"
+  },
+  {
+    "layouts": [
+      "jeddah-1"
+    ],
+    "id": "jeddah",
+    "name": "Jeddah",
+    "fullName": "Jeddah Corniche Circuit",
+    "placeName": "Jeddah"
+  },
+  {
+    "layouts": [
+      "jerez-1",
+      "jerez-2"
+    ],
+    "id": "jerez",
+    "name": "Jerez",
+    "fullName": "Circuito de Jerez",
+    "placeName": "Jerez de la Frontera"
+  },
+  {
+    "layouts": [
+      "kyalami-1",
+      "kyalami-2"
+    ],
+    "id": "kyalami",
+    "name": "Kyalami",
+    "fullName": "Kyalami Racing Circuit",
+    "placeName": "Midrand"
+  },
+  {
+    "layouts": [
+      "las-vegas-1"
+    ],
+    "id": "las-vegas",
+    "name": "Las Vegas",
+    "fullName": "Las Vegas Street Circuit",
+    "placeName": "Las Vegas"
+  },
+  {
+    "layouts": [
+      "long-beach-1",
+      "long-beach-2",
+      "long-beach-3"
+    ],
+    "id": "long-beach",
+    "name": "Long Beach",
+    "fullName": "Long Beach",
+    "placeName": "Long Beach"
+  },
+  {
+    "layouts": [
+      "lusail-1"
+    ],
+    "id": "lusail",
+    "name": "Lusail",
+    "fullName": "Lusail International Circuit",
+    "placeName": "Lusail"
+  },
+  {
+    "layouts": [
+      "madring-1"
+    ],
+    "id": "madring",
+    "name": "Madring",
+    "fullName": "Circuito de Madring",
+    "placeName": "Madrid"
+  },
+  {
+    "layouts": [
+      "magny-cours-1",
+      "magny-cours-2",
+      "magny-cours-3"
+    ],
+    "id": "magny-cours",
+    "name": "Magny-Cours",
+    "fullName": "Circuit de Nevers Magny-Cours",
+    "placeName": "Nevers"
+  },
+  {
+    "layouts": [
+      "marina-bay-1",
+      "marina-bay-2",
+      "marina-bay-3",
+      "marina-bay-4"
+    ],
+    "id": "marina-bay",
+    "name": "Marina Bay",
+    "fullName": "Marina Bay Street Circuit",
+    "placeName": "Singapore"
+  },
+  {
+    "layouts": [
+      "melbourne-1",
+      "melbourne-2"
+    ],
+    "id": "melbourne",
+    "name": "Melbourne",
+    "fullName": "Melbourne Grand Prix Circuit",
+    "placeName": "Melbourne"
+  },
+  {
+    "layouts": [
+      "mexico-city-1",
+      "mexico-city-2",
+      "mexico-city-3"
+    ],
+    "id": "mexico-city",
+    "name": "Hermanos Rodr\u00edguez",
+    "fullName": "Aut\u00f3dromo Hermanos Rodr\u00edguez",
+    "placeName": "Mexico City"
+  },
+  {
+    "layouts": [
+      "miami-1"
+    ],
+    "id": "miami",
+    "name": "Miami",
+    "fullName": "Miami International Autodrome",
+    "placeName": "Miami Gardens"
+  },
+  {
+    "layouts": [
+      "monaco-1",
+      "monaco-2",
+      "monaco-3",
+      "monaco-4",
+      "monaco-5",
+      "monaco-6"
+    ],
+    "id": "monaco",
+    "name": "Monaco",
+    "fullName": "Circuit de Monaco",
+    "placeName": "Monte Carlo"
+  },
+  {
+    "layouts": [
+      "monsanto-1"
+    ],
+    "id": "monsanto",
+    "name": "Monsanto",
+    "fullName": "Circuito de Monsanto",
+    "placeName": "Lisbon"
+  },
+  {
+    "layouts": [
+      "mont-tremblant-1"
+    ],
+    "id": "mont-tremblant",
+    "name": "Mont-Tremblant",
+    "fullName": "Circuit Mont-Tremblant",
+    "placeName": "Mont-Tremblant"
+  },
+  {
+    "layouts": [
+      "montjuic-1"
+    ],
+    "id": "montjuic",
+    "name": "Montju\u00efc",
+    "fullName": "Circuito de Montju\u00efc",
+    "placeName": "Barcelona"
+  },
+  {
+    "layouts": [
+      "montreal-1",
+      "montreal-2",
+      "montreal-3",
+      "montreal-4",
+      "montreal-5",
+      "montreal-6"
+    ],
+    "id": "montreal",
+    "name": "Gilles Villeneuve",
+    "fullName": "Circuit Gilles Villeneuve",
+    "placeName": "Montreal"
+  },
+  {
+    "layouts": [
+      "monza-1",
+      "monza-2",
+      "monza-3",
+      "monza-4",
+      "monza-5",
+      "monza-6",
+      "monza-7"
+    ],
+    "id": "monza",
+    "name": "Monza",
+    "fullName": "Autodromo Nazionale Monza",
+    "placeName": "Monza"
+  },
+  {
+    "layouts": [
+      "mosport-1"
+    ],
+    "id": "mosport",
+    "name": "Mosport",
+    "fullName": "Canadian Tire Motorsport Park",
+    "placeName": "Bowmanville"
+  },
+  {
+    "layouts": [
+      "mugello-1"
+    ],
+    "id": "mugello",
+    "name": "Mugello",
+    "fullName": "Autodromo Internazionale del Mugello",
+    "placeName": "Scarperia e San Piero"
+  },
+  {
+    "layouts": [
+      "nivelles-1"
+    ],
+    "id": "nivelles",
+    "name": "Nivelles-Baulers",
+    "fullName": "Nivelles-Baulers",
+    "placeName": "Nivelles"
+  },
+  {
+    "layouts": [
+      "nurburgring-1",
+      "nurburgring-2",
+      "nurburgring-3",
+      "nurburgring-4"
+    ],
+    "id": "nurburgring",
+    "name": "N\u00fcrburgring",
+    "fullName": "N\u00fcrburgring",
+    "placeName": "N\u00fcrburg"
+  },
+  {
+    "layouts": [
+      "paul-ricard-1",
+      "paul-ricard-2",
+      "paul-ricard-3"
+    ],
+    "id": "paul-ricard",
+    "name": "Paul Ricard",
+    "fullName": "Circuit Paul Ricard",
+    "placeName": "Le Castellet"
+  },
+  {
+    "layouts": [
+      "pedralbes-1"
+    ],
+    "id": "pedralbes",
+    "name": "Pedralbes",
+    "fullName": "Pedralbes Circuit",
+    "placeName": "Barcelona"
+  },
+  {
+    "layouts": [
+      "pescara-1"
+    ],
+    "id": "pescara",
+    "name": "Pescara",
+    "fullName": "Pescara Circuit",
+    "placeName": "Pescara"
+  },
+  {
+    "layouts": [
+      "phoenix-1",
+      "phoenix-2"
+    ],
+    "id": "phoenix",
+    "name": "Phoenix",
+    "fullName": "Phoenix Street Circuit",
+    "placeName": "Phoenix"
+  },
+  {
+    "layouts": [
+      "portimao-1"
+    ],
+    "id": "portimao",
+    "name": "Portim\u00e3o",
+    "fullName": "Algarve International Circuit",
+    "placeName": "Portim\u00e3o"
+  },
+  {
+    "layouts": [
+      "porto-1"
+    ],
+    "id": "porto",
+    "name": "Boavista",
+    "fullName": "Circuito da Boavista",
+    "placeName": "Porto"
+  },
+  {
+    "layouts": [
+      "reims-1",
+      "reims-2"
+    ],
+    "id": "reims",
+    "name": "Reims-Gueux",
+    "fullName": "Reims-Gueux",
+    "placeName": "Reims"
+  },
+  {
+    "layouts": [
+      "riverside-1"
+    ],
+    "id": "riverside",
+    "name": "Riverside",
+    "fullName": "Riverside International Raceway",
+    "placeName": "Riverside"
+  },
+  {
+    "layouts": [
+      "rouen-1",
+      "rouen-2"
+    ],
+    "id": "rouen",
+    "name": "Rouen-Les-Essarts",
+    "fullName": "Rouen-Les-Essarts",
+    "placeName": "Rouen"
+  },
+  {
+    "layouts": [
+      "sebring-1"
+    ],
+    "id": "sebring",
+    "name": "Sebring",
+    "fullName": "Sebring International Raceway",
+    "placeName": "Sebring"
+  },
+  {
+    "layouts": [
+      "sepang-1"
+    ],
+    "id": "sepang",
+    "name": "Sepang",
+    "fullName": "Sepang International Circuit",
+    "placeName": "Sepang"
+  },
+  {
+    "layouts": [
+      "shanghai-1"
+    ],
+    "id": "shanghai",
+    "name": "Shanghai",
+    "fullName": "Shanghai International Circuit",
+    "placeName": "Shanghai"
+  },
+  {
+    "layouts": [
+      "silverstone-1",
+      "silverstone-2",
+      "silverstone-3",
+      "silverstone-4",
+      "silverstone-5",
+      "silverstone-6",
+      "silverstone-7",
+      "silverstone-8"
+    ],
+    "id": "silverstone",
+    "name": "Silverstone",
+    "fullName": "Silverstone Circuit",
+    "placeName": "Silverstone"
+  },
+  {
+    "layouts": [
+      "sochi-1"
+    ],
+    "id": "sochi",
+    "name": "Sochi",
+    "fullName": "Sochi Autodrom",
+    "placeName": "Sochi"
+  },
+  {
+    "layouts": [
+      "spa-francorchamps-1",
+      "spa-francorchamps-2",
+      "spa-francorchamps-3",
+      "spa-francorchamps-4"
+    ],
+    "id": "spa-francorchamps",
+    "name": "Spa-Francorchamps",
+    "fullName": "Circuit de Spa-Francorchamps",
+    "placeName": "Spa"
+  },
+  {
+    "layouts": [
+      "spielberg-1",
+      "spielberg-2",
+      "spielberg-3"
+    ],
+    "id": "spielberg",
+    "name": "Red Bull Ring",
+    "fullName": "Red Bull Ring",
+    "placeName": "Spielberg"
+  },
+  {
+    "layouts": [
+      "suzuka-1",
+      "suzuka-2"
+    ],
+    "id": "suzuka",
+    "name": "Suzuka",
+    "fullName": "Suzuka Circuit",
+    "placeName": "Suzuka"
+  },
+  {
+    "layouts": [
+      "valencia-1"
+    ],
+    "id": "valencia",
+    "name": "Valencia",
+    "fullName": "Valencia Street Circuit",
+    "placeName": "Valencia"
+  },
+  {
+    "layouts": [
+      "watkins-glen-1",
+      "watkins-glen-2",
+      "watkins-glen-3"
+    ],
+    "id": "watkins-glen",
+    "name": "Watkins Glen",
+    "fullName": "Watkins Glen International",
+    "placeName": "Watkins Glen"
+  },
+  {
+    "layouts": [
+      "yas-marina-1",
+      "yas-marina-2"
+    ],
+    "id": "yas-marina",
+    "name": "Yas Marina",
+    "fullName": "Yas Marina Circuit",
+    "placeName": "Abu Dhabi"
+  },
+  {
+    "layouts": [
+      "yeongam-1"
+    ],
+    "id": "yeongam",
+    "name": "Korea",
+    "fullName": "Korea International Circuit",
+    "placeName": "Yeongam"
+  },
+  {
+    "layouts": [
+      "zandvoort-1",
+      "zandvoort-2",
+      "zandvoort-3",
+      "zandvoort-4",
+      "zandvoort-5"
+    ],
+    "id": "zandvoort",
+    "name": "Zandvoort",
+    "fullName": "Circuit Park Zandvoort",
+    "placeName": "Zandvoort"
+  },
+  {
+    "layouts": [
+      "zeltweg-1"
+    ],
+    "id": "zeltweg",
+    "name": "Zeltweg",
+    "fullName": "Zeltweg",
+    "placeName": "Zeltweg"
+  },
+  {
+    "layouts": [
+      "zolder-1",
+      "zolder-2"
+    ],
+    "id": "zolder",
+    "name": "Zolder",
+    "fullName": "Circuit Zolder",
+    "placeName": "Heusden-Zolder"
+  }
+]
