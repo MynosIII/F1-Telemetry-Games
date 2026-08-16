@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Velocidad Máxima – Minijuego</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --accent: #ff4d00; --accent2: #ffcc00; }
+    body {
+      background: #0a0a0f; color: #f0f0f0;
+      font-family: 'Inter', sans-serif;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      min-height: 100vh; overflow: hidden;
+    }
+    h1 {
+      font-family: 'Orbitron', monospace; font-size: clamp(1.4rem, 4vw, 2.2rem);
+      font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      margin-bottom: 0.5rem; text-align: center;
+    }
+    #game-wrapper { display: flex; flex-direction: column; align-items: center; gap: 0.75rem; }
+    #hud {
+      display: flex; gap: 2rem; align-items: center;
+      background: rgba(10,10,20,0.85); border: 1px solid rgba(255,77,0,0.3);
+      border-radius: 12px; padding: 0.6rem 1.6rem;
+      backdrop-filter: blur(8px); width: 100%; max-width: 480px; justify-content: space-between;
+    }
+    .hud-item { display: flex; flex-direction: column; align-items: center; }
+    .hud-label { font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.5); font-family: 'Orbitron', monospace; }
+    .hud-value { font-size: 1.5rem; font-weight: 700; font-family: 'Orbitron', monospace; color: var(--accent2); line-height: 1.1; }
+    #timer-val { color: #ff6b6b; }
+    #timer-val.warning { color: #ff2222; animation: pulse 0.5s ease-in-out infinite; }
+    @keyframes pulse { 0%,100%{opacity:1}50%{opacity:0.4} }
+    #progress-wrap { width: 100%; max-width: 480px; height: 8px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden; }
+    #progress-bar { height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent2)); border-radius: 4px; transition: width 0.3s ease; width: 0%; }
+    #game-canvas { border-radius: 12px; border: 2px solid rgba(255,77,0,0.25); box-shadow: 0 0 40px rgba(255,77,0,0.15); display: block; cursor: none; }
+    .overlay {
+      position: absolute; top:0; left:0; width:100%; height:100%;
+      display:flex; flex-direction:column; align-items:center; justify-content:center;
+      border-radius:12px; backdrop-filter:blur(6px); background:rgba(5,5,15,0.88);
+      gap:1.4rem; padding:2rem; text-align:center; pointer-events:all; z-index:10; transition:opacity 0.4s ease;
+    }
+    .overlay.hidden { opacity:0; pointer-events:none; }
+    .overlay h2 { font-family:'Orbitron',monospace; font-size:clamp(1.2rem,4vw,2rem); font-weight:900; text-transform:uppercase; letter-spacing:0.1em; }
+    .overlay h2.win  { color:var(--accent2); text-shadow:0 0 20px rgba(255,204,0,0.5); }
+    .overlay h2.lose { color:#ff4466; text-shadow:0 0 20px rgba(255,50,80,0.4); }
+    .overlay p { color:rgba(255,255,255,0.7); font-size:0.9rem; line-height:1.6; max-width:340px; }
+    .overlay .stat { font-family:'Orbitron',monospace; font-size:1rem; color:var(--accent2); }
+    .btn {
+      background:linear-gradient(135deg,var(--accent) 0%,#cc3300 100%);
+      color:#fff; border:none; border-radius:8px; padding:0.75rem 2.4rem;
+      font-family:'Orbitron',monospace; font-size:0.9rem; font-weight:700;
+      letter-spacing:0.1em; text-transform:uppercase; cursor:pointer;
+      transition:transform 0.15s ease,box-shadow 0.15s ease; box-shadow:0 4px 20px rgba(255,77,0,0.4);
+    }
+    .btn:hover { transform:translateY(-2px) scale(1.03); box-shadow:0 8px 30px rgba(255,77,0,0.6); }
+    .btn:active { transform:translateY(0) scale(0.98); }
+    .controls-hint { font-size:0.72rem; color:rgba(255,255,255,0.32); letter-spacing:0.05em; }
+    /* Mobile control pad */
+    #ctrl-pad {
+      display: flex; gap: 0.5rem; justify-content: center; align-items: stretch;
+      width: 100%; max-width: 380px; padding: 0.4rem 0.3rem;
+      touch-action: none; user-select: none; -webkit-user-select: none;
+    }
+    .ctrl-btn {
+      flex: 1; min-height: 54px; border-radius: 10px; border: none; cursor: pointer;
+      background: rgba(255,255,255,0.12); backdrop-filter: blur(4px);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: #fff; font-size: 1.3rem; line-height: 1;
+      transition: background 0.08s, transform 0.08s;
+      display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 2px;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .ctrl-btn span { font-size: 0.55rem; letter-spacing: 0.06em; opacity: 0.7; font-family: 'Orbitron', monospace; text-transform: uppercase; }
+    .ctrl-btn:active, .ctrl-btn.pressed {
+      background: rgba(255,120,0,0.35); border-color: rgba(255,120,0,0.6);
+      transform: scale(0.95);
+    }
+    .ctrl-btn.accel-btn:active, .ctrl-btn.accel-btn.pressed { background: rgba(0,200,100,0.30); border-color: rgba(0,220,120,0.6); }
+    .ctrl-btn.brake-btn:active, .ctrl-btn.brake-btn.pressed { background: rgba(220,50,50,0.30); border-color: rgba(220,60,60,0.6); }
+    #canvas-container { position:relative; }
+  </style>
+</head>
+<body>
+<div id="game-wrapper">
+  <h1>🏎 Velocidad Máxima</h1>
+  <div id="hud">
+    <div class="hud-item"><span class="hud-label">Pasados</span><span class="hud-value" id="passed-val">0 / 15</span></div>
+    <div class="hud-item"><span class="hud-label">Tiempo</span><span class="hud-value" id="timer-val">1:30</span></div>
+    <div class="hud-item"><span class="hud-label">Choques</span><span class="hud-value" style="font-size:1.1rem;letter-spacing:0.05em" id="crash-pips">🔘🔘🔘</span></div>
+    <div class="hud-item"><span class="hud-label">Velocidad</span><span class="hud-value" id="speed-val">1x</span></div>
+  </div>
+  <div id="progress-wrap"><div id="progress-bar"></div></div>
+  <div id="canvas-container">
+    <canvas id="game-canvas" width="380" height="540"></canvas>
+    <div class="overlay" id="overlay-start">
+      <h2 style="color:var(--accent)">¡Listo para correr!</h2>
+      <p>Pasá <strong>15 autos</strong> en <strong>1:30 minutos</strong>.</p>
+      <p>Usá <strong>← →</strong> o <strong>A D</strong> para moverte.<br/>
+         Rodeá a los autos para pasarlos.<br/>
+         <em>Chocar te frena — no te cuenta el auto.</em></p>
+      <p class="controls-hint">Touch: deslizá el dedo</p>
+      <button class="btn" id="btn-start">ARRANCAR</button>
+    </div>
+    <div class="overlay hidden" id="overlay-win">
+      <h2 class="win">🏆 ¡GANASTE!</h2>
+      <p>Pasaste los 15 autos.</p>
+      <p class="stat" id="win-stat"></p>
+      <button class="btn" id="btn-win-restart">JUGAR DE NUEVO</button>
+    </div>
+    <div class="overlay hidden" id="overlay-lose">
+      <h2 class="lose">⏱ TIEMPO!</h2>
+      <p>No llegaste a pasar todos los autos.</p>
+      <p class="stat" id="lose-stat"></p>
+      <button class="btn" id="btn-lose-restart">INTENTAR DE NUEVO</button>
+    </div>
+    <div class="overlay hidden" id="overlay-crash">
+      <div style="font-size:4rem;filter:grayscale(0.2)">💥</div>
+      <h2 style="color:#ff2244;text-shadow:0 0 24px rgba(255,30,60,0.6)">AUTO DESTRUIDO</h2>
+      <p>Chocaste <strong>3 veces</strong>.<br/>El auto no aguantó más.</p>
+      <p class="stat" id="crash-stat"></p>
+      <button class="btn" id="btn-crash-restart">INTENTAR DE NUEVO</button>
+    </div>
+  </div>
+  <div id="ctrl-pad">
+    <button class="ctrl-btn" id="ctrl-left"  >◀<span>izq</span></button>
+    <button class="ctrl-btn brake-btn" id="ctrl-brake" >⬇<span>frenar</span></button>
+    <button class="ctrl-btn accel-btn" id="ctrl-accel" >⬆<span>acel.</span></button>
+    <button class="ctrl-btn" id="ctrl-right" >▶<span>der</span></button>
+  </div>
+</div>
+<script>
+(function () {
+  'use strict';
+
+  // ═══ CONFIG ═══════════════════════════════════════════════════
+  const GOAL       = 15;
+  const TIME_LIMIT = 90;
+  const W = 380, H = 540;
+  const ROAD_TOP_Y = 100, ROAD_BOT_Y = H, HORIZON_Y = 80;
+  const ROAD_TOP_W = 40,  ROAD_BOT_W = 320;
+
+  // Player sprite (same proportions as enemy cars but fixed size)
+  const PW = 50, PH = 80;
+  const PLAYER_Y = H - PH - 14;   // TOP of player sprite
+  const PLYR_SPD = 2.8;            // lateral px per frame at 60fps
+  const ROAD_MARGIN = 16;
+
+  // Speed config
+  const SPD_BASE   = 1.0;
+  const SPD_CAP    = 2.6;   // lower cap → smaller relative speed diff → each car takes longer to pass
+  const RAMP_TIME  = 60;   // full 60s to reach cap naturally
+  const ACCEL_RATE = 0.8;  // boost rate (slower than before — can't just fly past)
+  const BRAKE_RATE = 3.0;
+
+  // BASE_ADVANCE: how fast a "stationary" car advances per second at speedMult=1
+  const BASE_ADV = 0.30;
+
+  // Enemy car colors (never white)
+  const CAR_COLORS = ['#ff3355','#ff9900','#00ccff','#44ee77','#cc44ff','#ff6699','#ffee00','#00ffcc','#ff7733','#44aaff'];
+  const PLAYER_COLOR = '#f0f0f0';   // white — never in enemy palette
+
+  const AI_CHANCE = 0.45;
+
+  // Curve config
+  const CURVE_MAX  = 160;   // px deflection at road bottom
+  const CURVE_VP   = 0.38; // vanishing point counter-deflection ratio
+
+  // ═══ STATE ════════════════════════════════════════════════════
+  let canvas, ctx;
+  let state = 'start';
+  let passed = 0, timeLeft = TIME_LIMIT;
+  let lastTs = null, animId = null;
+  let speedMult = SPD_BASE;
+  let playerX = W / 2 - PW / 2;
+  let crashFlash = 0;       // seconds remaining of screen flash
+  let crashCount = 0;       // collision counter (3 = game over)
+  const MAX_CRASHES = 3;
+  let accelInput = 0;   // -1 = braking, 0 = neutral, +1 = accelerating
+  const keys = {};
+  const ctrlTouch = {};  // tracks which ctrl buttons are pressed
+  let roadOffset = 0;
+  let playerSteer = 0; // -1 to 1 for visual rotation
+  let curveVal = 0, curveTarget = 0, curveTimer = 3;
+  let spawnTimer = 1.2;
+  let cars = [];
+  let skidMarks = [];
+  let mountains = buildMountains();
+  let finishLineY = -1;
+  let isFinished = false;
+
+  // ═══ ROAD GEOMETRY ════════════════════════════════════════════
+  function roadCX(y) {
+    const t = clamp((y - ROAD_TOP_Y) / (ROAD_BOT_Y - ROAD_TOP_Y), 0, 1);
+    const deflection = Math.pow(1 - t, 2.2) * curveVal * CURVE_MAX;
+    return W / 2 + deflection;
+  }
+  function roadAngle(y) {
+    const t = clamp((y - ROAD_TOP_Y) / (ROAD_BOT_Y - ROAD_TOP_Y), 0, 1);
+    const dx_dt = -2.2 * Math.pow(1 - t, 1.2) * curveVal * CURVE_MAX;
+    const dt_dy = 1 / (ROAD_BOT_Y - ROAD_TOP_Y);
+    return -Math.atan(dx_dt * dt_dy); // Negative so curve right (positive dx) rotates clockwise
+  }
+  function roadHW(y) {
+    const t = (y - ROAD_TOP_Y) / (ROAD_BOT_Y - ROAD_TOP_Y);
+    return ROAD_TOP_W / 2 + (ROAD_BOT_W / 2 - ROAD_TOP_W / 2) * t;
+  }
+  function roadL(y)  { return roadCX(y) - roadHW(y); }
+  function roadR(y)  { return roadCX(y) + roadHW(y); }
+  function roadW(y)  { return roadHW(y) * 2; }
+
+  // ═══ HELPERS ══════════════════════════════════════════════════
+  function clamp(v, a, b) { return Math.min(b, Math.max(a, v)); }
+  function lerp(a, b, t)  { return a + (b - a) * t; }
+  function shade(hex, amt) {
+    hex = hex.replace('#', '');
+    if (hex.length === 3) hex = hex.split('').map(c => c + c).join('');
+    const n = parseInt(hex, 16);
+    const r = clamp((n >> 16) + amt, 0, 255);
+    const g = clamp(((n >> 8) & 0xff) + amt, 0, 255);
+    const b = clamp((n & 0xff) + amt, 0, 255);
+    return `rgb(${r},${g},${b})`;
+  }
+  function buildMountains() {
+    return Array.from({length: 29}, (_, i) => ({ x: (i/28)*W, y: HORIZON_Y - 8 - Math.random()*38 }));
+  }
+
+  // ═══ SCENE — ALWAYS SUNNY ════════════════════════════════════
+  function drawScene() {
+    // Sky
+    const sg = ctx.createLinearGradient(0, 0, 0, HORIZON_Y);
+    sg.addColorStop(0, '#1560b0'); sg.addColorStop(0.65, '#4baae0'); sg.addColorStop(1, '#88d0f0');
+    ctx.fillStyle = sg; ctx.fillRect(0, 0, W, HORIZON_Y);
+
+    // Sun
+    ctx.save();
+    ctx.fillStyle = '#fff9a0'; ctx.shadowColor = '#ffdd00'; ctx.shadowBlur = 30;
+    ctx.beginPath(); ctx.arc(W - 50, 28, 15, 0, Math.PI * 2); ctx.fill();
+    ctx.shadowBlur = 0;
+    ctx.strokeStyle = 'rgba(255,240,80,0.22)'; ctx.lineWidth = 2;
+    for (let i = 0; i < 8; i++) {
+      const a = (i / 8) * Math.PI * 2;
+      ctx.beginPath();
+      ctx.moveTo(W - 50 + Math.cos(a)*19, 28 + Math.sin(a)*19);
+      ctx.lineTo(W - 50 + Math.cos(a)*30, 28 + Math.sin(a)*30);
+      ctx.stroke();
+    }
+    ctx.restore();
+
+    // Clouds
+    cloud(55, 20, 1.0); cloud(185, 14, 0.7); cloud(290, 26, 0.65);
+
+    // Grass strip
+    const gg = ctx.createLinearGradient(0, HORIZON_Y, 0, H);
+    gg.addColorStop(0, '#3d8c22'); gg.addColorStop(1, '#52ad35');
+    ctx.fillStyle = gg; ctx.fillRect(0, HORIZON_Y, W, H - HORIZON_Y);
+
+    // Hills
+    ctx.beginPath();
+    mountains.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y));
+    ctx.lineTo(W, HORIZON_Y); ctx.lineTo(0, HORIZON_Y); ctx.closePath();
+    const hg = ctx.createLinearGradient(0, HORIZON_Y - 40, 0, HORIZON_Y);
+    hg.addColorStop(0, '#286018'); hg.addColorStop(1, '#367e22');
+    ctx.fillStyle = hg; ctx.fill();
+  }
+  function cloud(cx, cy, sc) {
+    ctx.save(); ctx.fillStyle = 'rgba(255,255,255,0.84)';
+    ctx.beginPath();
+    ctx.arc(cx,        cy,      13*sc, 0, Math.PI*2);
+    ctx.arc(cx+15*sc,  cy-4*sc, 10*sc, 0, Math.PI*2);
+    ctx.arc(cx-13*sc,  cy+2*sc,  9*sc, 0, Math.PI*2);
+    ctx.arc(cx+27*sc,  cy+3*sc, 11*sc, 0, Math.PI*2);
+    ctx.fill(); ctx.restore();
+  }
+
+  // ═══ ROAD ════════════════════════════════════════════════════
+  function drawRoad() {
+    const segments = 30;
+    const rg = ctx.createLinearGradient(0, ROAD_TOP_Y, 0, H);
+    rg.addColorStop(0, '#606068'); rg.addColorStop(0.5, '#4c4c54'); rg.addColorStop(1, '#3c3c42');
+    ctx.fillStyle = rg;
+    
+    // Draw road asphalt in segments so it bends with the curve
+    for (let i = 0; i < segments; i++) {
+      const t0 = i / segments;
+      const t1 = (i + 1) / segments;
+      const y0 = i === 0 ? ROAD_TOP_Y : lerp(ROAD_TOP_Y, ROAD_BOT_Y, t0) - 1; // overlap to fix gaps
+      const y1 = lerp(ROAD_TOP_Y, ROAD_BOT_Y, t1);
+      
+      ctx.beginPath();
+      ctx.moveTo(roadL(y0), y0);
+      ctx.lineTo(roadR(y0), y0);
+      ctx.lineTo(roadR(y1), y1);
+      ctx.lineTo(roadL(y1), y1);
+      ctx.closePath();
+      ctx.fill();
+    }
+    
+    drawStripes(); drawDashes();
+  }
+  function drawStripes() {
+    for (let i = 0; i < 30; i++) {
+      const t0 = ((i / 30) + roadOffset) % 1;
+      const t1 = ((i / 30) + (1/30) + roadOffset) % 1;
+      const y0 = ROAD_TOP_Y + t0 * (ROAD_BOT_Y - ROAD_TOP_Y);
+      const y1 = ROAD_TOP_Y + t1 * (ROAD_BOT_Y - ROAD_TOP_Y);
+      if (y1 < y0) continue;
+      
+      const sw0 = Math.max(2, roadW(y0) * 0.022);
+      const sw1 = Math.max(2, roadW(y1) * 0.022);
+      const red = Math.floor((i + Math.floor(roadOffset * 30)) % 2) === 0;
+      ctx.fillStyle = red ? '#cc1100' : '#eeeeee';
+      
+      // Left curb
+      ctx.beginPath();
+      ctx.moveTo(roadL(y0) - sw0, y0);
+      ctx.lineTo(roadL(y1) - sw1, y1);
+      ctx.lineTo(roadL(y1), y1);
+      ctx.lineTo(roadL(y0), y0);
+      ctx.fill();
+
+      // Right curb
+      ctx.beginPath();
+      ctx.moveTo(roadR(y0), y0);
+      ctx.lineTo(roadR(y1), y1);
+      ctx.lineTo(roadR(y1) + sw1, y1);
+      ctx.lineTo(roadR(y0) + sw0, y0);
+      ctx.fill();
+    }
+  }
+  function drawDashes() {
+    for (let i = 0; i < 20; i++) {
+      const t0 = ((i / 20) + roadOffset * 0.65) % 1;
+      if (t0 > 0.52) continue;
+      const t1 = t0 + 0.025;
+      const y0 = ROAD_TOP_Y + t0 * (ROAD_BOT_Y - ROAD_TOP_Y);
+      const y1 = ROAD_TOP_Y + t1 * (ROAD_BOT_Y - ROAD_TOP_Y);
+      
+      const cw0 = Math.max(1.5, roadW(y0) * 0.012);
+      const cw1 = Math.max(1.5, roadW(y1) * 0.012);
+      
+      ctx.fillStyle = 'rgba(255,255,255,0.5)';
+      ctx.beginPath();
+      ctx.moveTo(roadCX(y0) - cw0/2, y0);
+      ctx.lineTo(roadCX(y1) - cw1/2, y1);
+      ctx.lineTo(roadCX(y1) + cw1/2, y1);
+      ctx.lineTo(roadCX(y0) + cw0/2, y0);
+      ctx.fill();
+    }
+  }
+
+  // ═══ CAR SPRITE ═══════════════════════════════════════════════
+  //
+  //  Top-down view from behind.  Direction of travel: UP (toward horizon).
+  //
+  //  sy           = TOP of sprite   = FRONT of car  (faces horizon, headlights)
+  //  sy + sh      = BOTTOM of sprite = REAR of car   (faces player,  taillights)
+  //
+  //  Layout from top (front) to bottom (rear):
+  //    [front bumper + headlights]   ← sy
+  //    [hood / windshield glass  ]
+  //    [cabin roof — dark bar    ]
+  //    [rear window glass        ]
+  //    [trunk lid                ]
+  // ═══ CAR DRAWING ══════════════════════════════════════════════
+  function drawCar(cx, cy, sw, sh, color, flashWhite, angle, opacity, tilt = 1.0) {
+    if (opacity <= 0) return;
+    ctx.save();
+    ctx.globalAlpha = opacity;
+    ctx.translate(cx, cy + sh/2);
+    // Pseudo-3D effect: scale Y by tilt (0.5 when far, 1.0 when close), then rotate Z
+    ctx.scale(1, tilt);
+    ctx.rotate(angle);
+    ctx.globalAlpha = opacity;
+
+    // Shadow
+    ctx.fillStyle = 'rgba(0,0,0,0.28)';
+    ctx.beginPath(); ctx.ellipse(0, sh/2 + 3, sw * 0.42, sh * 0.08, 0, 0, Math.PI * 2); ctx.fill();
+
+    // Distant cars are drawn as a simple blur/block
+    if (sh < 14) {
+      ctx.fillStyle = color;
+      ctx.fillRect(-sw/2, -sh/2, sw, sh);
+      ctx.fillStyle = '#111';
+      ctx.fillRect(-sw*0.4, -sh*0.2, sw*0.8, sh*0.4);
+      ctx.fillStyle = flashWhite ? '#ffffff' : '#ff1111';
+      ctx.fillRect(-sw*0.4, sh*0.3, sw*0.2, sh*0.2);
+      ctx.fillRect(sw*0.2, sh*0.3, sw*0.2, sh*0.2);
+      ctx.restore();
+      return;
+    }
+
+    // ── Body
+    const bg = ctx.createLinearGradient(-sw/2, -sh/2, sw/2, -sh/2);
+    bg.addColorStop(0, shade(color, -40)); bg.addColorStop(0.5, color); bg.addColorStop(1, shade(color, -40));
+    ctx.fillStyle = bg;
+    ctx.beginPath(); ctx.roundRect(-sw*0.46, -sh/2 + sh*0.04, sw*0.92, sh*0.92, sh*0.09); ctx.fill();
+
+    // ── Front bumper
+    ctx.fillStyle = shade(color, -55);
+    ctx.beginPath(); ctx.roundRect(-sw*0.38, -sh/2 + sh*0.04, sw*0.76, sh*0.09, sh*0.045); ctx.fill();
+
+    // ── Headlights
+    ctx.fillStyle = '#fff8b0';
+    ctx.shadowColor = '#ffee55'; ctx.shadowBlur = 5;
+    ctx.beginPath(); ctx.ellipse(-sw*0.24, -sh/2 + sh*0.10, sw*0.085, sh*0.043, 0, 0, Math.PI*2); ctx.fill();
+    ctx.beginPath(); ctx.ellipse(sw*0.24, -sh/2 + sh*0.10, sw*0.085, sh*0.043, 0, 0, Math.PI*2); ctx.fill();
+    ctx.shadowBlur = 0;
+
+    // ── Hood
+    ctx.fillStyle = shade(color, -20);
+    ctx.beginPath(); ctx.roundRect(-sw*0.40, -sh/2 + sh*0.13, sw*0.80, sh*0.16, sh*0.04); ctx.fill();
+
+    // ── Windshield glass
+    ctx.fillStyle = 'rgba(100,180,240,0.50)';
+    ctx.beginPath(); ctx.roundRect(-sw*0.30, -sh/2 + sh*0.29, sw*0.60, sh*0.14, sh*0.04); ctx.fill();
+
+    // ── Cabin roof
+    ctx.fillStyle = shade(color, -60);
+    ctx.beginPath(); ctx.roundRect(-sw*0.33, -sh/2 + sh*0.43, sw*0.66, sh*0.22, sh*0.03); ctx.fill();
+
+    // ── Rear window glass
+    ctx.fillStyle = 'rgba(80,155,215,0.62)';
+    ctx.beginPath(); ctx.roundRect(-sw*0.27, -sh/2 + sh*0.65, sw*0.54, sh*0.14, sh*0.04); ctx.fill();
+    ctx.fillStyle = 'rgba(255,255,255,0.18)';
+    ctx.beginPath(); ctx.roundRect(-sw*0.22, -sh/2 + sh*0.67, sw*0.14, sh*0.07, sh*0.02); ctx.fill();
+
+    // ── Trunk lid
+    ctx.fillStyle = shade(color, -15);
+    ctx.beginPath(); ctx.roundRect(-sw*0.40, -sh/2 + sh*0.79, sw*0.80, sh*0.09, sh*0.03); ctx.fill();
+
+    // ── Rear bumper
+    ctx.fillStyle = shade(color, -60);
+    ctx.beginPath(); ctx.roundRect(-sw*0.40, sh/2 - sh*0.10, sw*0.80, sh*0.07, sh*0.035); ctx.fill();
+
+    // ── License plate
+    ctx.fillStyle = '#d8d8c0';
+    ctx.beginPath(); ctx.roundRect(-sw*0.10, sh/2 - sh*0.09, sw*0.20, sh*0.055, sh*0.02); ctx.fill();
+
+    // ── Taillights
+    const tly = sh/2 - sh * 0.07;
+    const tlCol = flashWhite ? '#ffffff' : '#ff1111';
+    ctx.fillStyle   = tlCol;
+    ctx.shadowColor = flashWhite ? '#ffffff' : '#ff2200';
+    ctx.shadowBlur  = flashWhite ? 18 : 9;
+    ctx.beginPath(); ctx.ellipse(-sw*0.26, tly, sw*0.09, sh*0.044, 0, 0, Math.PI*2); ctx.fill();
+    ctx.beginPath(); ctx.ellipse(sw*0.26, tly, sw*0.09, sh*0.044, 0, 0, Math.PI*2); ctx.fill();
+    ctx.shadowBlur = 0;
+
+    // ── Wheels
+    ctx.fillStyle = '#111';
+    const wr = sw * 0.115, wh = sh * 0.115;
+    ctx.beginPath(); ctx.ellipse(-sw*0.44, -sh/2 + sh*0.22, wr, wh, 0, 0, Math.PI*2); ctx.fill();
+    ctx.beginPath(); ctx.ellipse(sw*0.44, -sh/2 + sh*0.22, wr, wh, 0, 0, Math.PI*2); ctx.fill();
+    ctx.beginPath(); ctx.ellipse(-sw*0.44, sh/2 - sh*0.18, wr*1.15, wh*1.15, 0, 0, Math.PI*2); ctx.fill();
+    ctx.beginPath(); ctx.ellipse(sw*0.44, sh/2 - sh*0.18, wr*1.15, wh*1.15, 0, 0, Math.PI*2); ctx.fill();
+
+    ctx.restore();
+  }
+
+  // ═══ CAR SCREEN COORDS ════════════════════════════════════════
+  function calcPos(car) {
+    const t  = car.roadY;
+    const y  = ROAD_TOP_Y + t * (ROAD_BOT_Y - ROAD_TOP_Y); // road contact = BOTTOM of car
+    const rw = roadW(y);
+    const sw = rw * 0.20;   // narrower cars
+    const sh = sw * 1.58;
+    car.sx  = roadCX(y) + car.laneOff * rw * 0.5; // full half-width scale
+    car.sy  = y - sh;   // TOP of sprite (front of car, toward horizon)
+    car.sw  = sw;
+    car.sh  = sh;
+    car.bot = y;        // road contact (rear of car)
+  }
+
+  // ═══ SPAWN ════════════════════════════════════════════════════
+  //  ownSpeed: how fast the car moves on its own (same units as speedMult).
+  //  Relative approach speed = speedMult - ownSpeed.
+  //  Normal cars: ownSpeed = 0 (stationary on road).
+  //  Fast cars:   ownSpeed > 0 (they're actually moving; player must be faster to close in).
+  //  ownSpeed is a fraction of SPD_CAP so as cap changes, difficulty scales.
+  //  Key design goal: each car should take 5-10s to pass even at max speed.
+  //  At SPD_CAP=2.6 and BASE_ADV=0.30, max relative advance = (2.6-ownSpeed)*0.30/s
+  //  To take ~6s: need advance of 1.0/6 ≈ 0.17/s → relative diff ≈ 0.55
+  //  So late-game cars should have ownSpeed ≈ SPD_CAP - 0.55 ≈ 2.05
+  function carOwnSpeed() {
+    const p = passed;
+    let base, spread;
+    // All cars move — none are parked. Slowest still requires player to accelerate.
+    if      (p < 4)  { base = 0.55; spread = 0.30; }  // 0.55–0.85  (need speed ~1.2+ to catch)
+    else if (p < 7)  { base = 0.75; spread = 0.45; }  // 0.75–1.20
+    else if (p < 10) { base = 1.00; spread = 0.55; }  // 1.00–1.55
+    else if (p < 13) { base = 1.35; spread = 0.50; }  // 1.35–1.85
+    else             { base = 1.70; spread = 0.45; }  // 1.70–2.15  (very hard to close in)
+    return clamp(base + Math.random() * spread, 0.3, SPD_CAP - 0.35);
+  }
+
+  function spawnCar() {
+    const nearTop = cars.filter(c => c.roadY < 0.20);
+    if (nearTop.length >= 2) return; // Prevent impenetrable walls by limiting density per band
+
+    let laneOff, tries = 0;
+    do {
+      const slot = Math.round((Math.random() * 4 - 2)) * 0.35;
+      laneOff = clamp(slot + (Math.random() - 0.5) * 0.12, -0.75, 0.75);
+      // Ensure new cars spawn at least 0.65 (almost 2 lanes) away from others laterally
+      if (!nearTop.some(c => Math.abs(c.laneOff - laneOff) < 0.65)) break;
+    } while (++tries < 15);
+
+    const ownSpd = carOwnSpeed();
+    const hasAI  = Math.random() < 0.85;
+    cars.push({
+      laneOff, roadY: 0.02,
+      color: CAR_COLORS[Math.floor(Math.random() * CAR_COLORS.length)],
+      ownSpeed: ownSpd,
+      counted: false, hitFlash: false,
+      hasAI, aiDodging: false, aiDodgeDir: 0, aiDefends: 0, crashes: 0,
+      sx:0, sy:0, sw:0, sh:0, bot:0
+    });
+  }
+
+  // ═══ UPDATE CARS ══════════════════════════════════════════════
+  function updateCars(dt) {
+    const playerT = (PLAYER_Y + PH/2 - ROAD_TOP_Y) / (ROAD_BOT_Y - ROAD_TOP_Y);
+    cars.forEach(car => {
+      // Relative approach speed. Negative = car moves away (player too slow).
+      const relSpd = speedMult - car.ownSpeed;
+      car.roadY += relSpd * BASE_ADV * dt;
+      if (car.roadY < 0.01) car.roadY = 0.01;
+      calcPos(car);
+
+      // AI dodge: car swerves to defend against player, or overtake slower cars
+      if (car.hasAI && !car.counted) {
+        if (!car.aiDodging) {
+          let targetOff = null;
+          
+          // Defending against player:
+          if (car.aiDefends < 2 && playerT > car.roadY && (playerT - car.roadY) < 0.45 && speedMult > car.ownSpeed) {
+            const pOff = (playerX + PW/2 - roadCX(PLAYER_Y + PH/2)) / (roadW(PLAYER_Y + PH/2) * 0.5);
+            if (Math.abs(pOff - car.laneOff) < 0.75 && Math.random() < 0.85) {
+              targetOff = pOff;
+              car.aiDefends++;
+            }
+          }
+          
+          // Overtaking a slower car in front of it:
+          if (targetOff === null) {
+            const slowCarsAhead = cars.filter(c => !c.counted && c !== car && c.roadY < car.roadY && (car.roadY - c.roadY) < 0.25);
+            for (let c of slowCarsAhead) {
+               if (car.ownSpeed > c.ownSpeed && Math.abs(c.laneOff - car.laneOff) < 0.6) {
+                  // Dodge away from the slow car
+                  targetOff = car.laneOff + (car.laneOff >= c.laneOff ? 0.6 : -0.6);
+                  break;
+               }
+            }
+          }
+          
+          if (targetOff !== null) {
+            car.aiDodging = true;
+            car.aiDodgeDir = targetOff > car.laneOff ? 1 : -1;
+          }
+        }
+        
+        if (car.aiDodging) {
+          car.laneOff = clamp(car.laneOff + car.aiDodgeDir * 1.4 * dt, -0.75, 0.75);
+          if (Math.random() < 0.4 && car.roadY < 1.0) {
+            skidMarks.push({ laneOff: car.laneOff, roadY: car.roadY, life: 1.5 });
+          }
+          if (Math.abs(car.laneOff) >= 0.72) car.aiDodging = false;
+        }
+        if (car.roadY < 0.60 || car.roadY > 0.93) car.aiDodging = false;
+      }
+
+      // Passed naturally (car fell behind player)
+      if (!car.counted && car.roadY >= 1.03) {
+        car.counted = true;
+        countPass();
+      } else if (car.counted && car.roadY < 0.95) {
+        car.counted = false;
+        passed--;
+        updateHUD();
+      }
+      car.hitFlash = false;
+    });
+
+    // ── SPREAD: push apart cars that are too close laterally in same z-band ──
+    const active = cars.filter(c => !c.counted);
+    for (let i = 0; i < active.length; i++) {
+      for (let j = i + 1; j < active.length; j++) {
+        const ci = active[i], cj = active[j];
+        if (Math.abs(ci.roadY - cj.roadY) > 0.16) continue;
+        const dist    = Math.abs(ci.laneOff - cj.laneOff);
+        const minDist = 0.45; // Wider minimum distance to prevent clipping
+        if (dist < minDist) {
+          const push = (minDist - dist) * 1.2 * dt * 10;  // stronger push
+          const dir  = ci.laneOff <= cj.laneOff ? -1 : 1;
+          ci.laneOff = clamp(ci.laneOff + dir * push, -0.75, 0.75);
+          cj.laneOff = clamp(cj.laneOff - dir * push, -0.75, 0.75);
+          
+          // Hard boundary push to prevent clipping
+          if (Math.abs(ci.laneOff - cj.laneOff) < minDist * 0.8) {
+             ci.laneOff = clamp(ci.laneOff + dir * 0.05, -0.75, 0.75);
+             cj.laneOff = clamp(cj.laneOff - dir * 0.05, -0.75, 0.75);
+          }
+        }
+      }
+    }
+
+    // Keep cars until they are very far behind, but remove dead cars
+    cars = cars.filter(c => !c.dead && c.roadY < 6.0);
+  }
+
+  // ═══ COLLISION — SOLID WALL + HARD STOP ═══════════════════════
+  //
+  //  Enemy cars are SOLID OBSTACLES. The player CANNOT clip through them.
+  //  On contact: speedMult drops to 0, player is pushed sideways.
+  //  The car is NOT counted as passed — player must go around it.
+  //
+  function resolveCollisions() {
+    for (const car of cars) {
+      if (car.counted) continue;
+      // Only cars in the "close" zone matter
+      if (car.roadY < 0.68 || car.roadY > 1.02) continue;
+
+      const { sx, sy, sw, sh } = car;
+      // Car hitbox (tight but fair)
+      const cL = sx - sw * 0.40;
+      const cR = sx + sw * 0.40;
+      const cT = sy + sh * 0.06;
+      const cB = sy + sh * 0.94;
+
+      // Player hitbox
+      const pL = playerX + 2;
+      const pR = playerX + PW - 2;
+      const pT = PLAYER_Y + 4;
+      const pB = PLAYER_Y + PH - 4;
+
+      const ovH = pL < cR && pR > cL;
+      const ovV = pT < cB && pB > cT;
+
+      if (!ovH || !ovV) continue;
+
+      // ── COLLISION: compute which side has less overlap and push player out ──
+      const overlapLeft  = cR - pL;   // push player left  (to the left of car)
+      const overlapRight = pR - cL;   // push player right (to the right of car)
+
+      const roadMinX = roadL(PLAYER_Y + PH/2) + ROAD_MARGIN;
+      const roadMaxX = roadR(PLAYER_Y + PH/2) - PW - ROAD_MARGIN;
+
+      if (overlapLeft <= overlapRight) {
+        playerX = clamp(cL - PW, roadMinX, roadMaxX);
+      } else {
+        playerX = clamp(cR, roadMinX, roadMaxX);
+      }
+
+      // ── Hard stop — speed drops to zero instantly
+      speedMult  = 0.0;
+      crashFlash = 0.55;
+      car.hitFlash = true;
+      car.crashes++;
+      crashCount++;
+      updateCrashHUD();
+
+      // Push rival forward so it stays clearly ahead (player falls back)
+      car.roadY = Math.max(0.02, car.roadY - 0.10);
+      calcPos(car);
+      
+      // AI car dies after 2 hits
+      if (car.crashes >= 2) {
+         if (!car.counted) countPass();
+         car.counted = true;
+         car.dead = true;
+      }
+
+      if (crashCount >= MAX_CRASHES) {
+        endGame('crash');
+        return;
+      }
+    }
+  }
+
+  // ═══ PLAYER ═══════════════════════════════════════════════════
+  function updatePlayer(dt) {
+    // Steering
+    let rawSteer = 0;
+    if (keys['ArrowLeft']  || keys['a'] || keys['A'] || ctrlTouch.left)  rawSteer = -1;
+    if (keys['ArrowRight'] || keys['d'] || keys['D'] || ctrlTouch.right) rawSteer =  1;
+    
+    // Smooth visual steering
+    playerSteer = lerp(playerSteer, rawSteer, dt * 8);
+    
+    let dx = rawSteer;
+
+    // Brake / Accelerate
+    const braking   = keys['ArrowDown'] || keys['s'] || keys['S'] || ctrlTouch.brake;
+    const boosting  = keys['ArrowUp']   || keys['w'] || keys['W'] || ctrlTouch.accel;
+    accelInput = braking ? -1 : boosting ? 1 : 0;
+
+    // Curve drift (centrifugal)
+    dx += -curveVal * 0.55;
+
+    const isHardTurn = Math.abs(dx) > 0.45 || braking;
+    if (isHardTurn && speedMult > 0.8 && Math.random() < 0.6) {
+      const pOff = (playerX + PW/2 - roadCX(PLAYER_Y + PH/2)) / (roadW(PLAYER_Y + PH/2) * 0.5);
+      skidMarks.push({ laneOff: pOff, roadY: (PLAYER_Y + PH/2 - ROAD_TOP_Y) / (ROAD_BOT_Y - ROAD_TOP_Y), life: 2.0 });
+    }
+
+    playerX += dx * PLYR_SPD * Math.min(speedMult + 0.4, 2.4) * 60 * dt;
+    
+    const cx = roadCX(PLAYER_Y + PH/2);
+    const hw = roadHW(PLAYER_Y + PH/2);
+    const isOffRoad = (playerX + PW/2 < cx - hw + 8) || (playerX + PW/2 > cx + hw - 8);
+    
+    if (isOffRoad) {
+       speedMult = Math.max(0.4, speedMult - 4.5 * dt); // Violent penalty, overrides accel
+       // Grass particles effect
+       if (Math.random() < 0.6 && speedMult > 0.6) {
+         const pOff = (playerX + PW/2 - cx) / hw;
+         skidMarks.push({ laneOff: pOff, roadY: (PLAYER_Y + PH/2 - ROAD_TOP_Y) / (ROAD_BOT_Y - ROAD_TOP_Y), life: 1.0 });
+       }
+    }
+
+    // Keep player on screen, but allow going off road
+    playerX = clamp(playerX, 10, W - PW - 10);
+
+    if (crashFlash > 0) crashFlash -= dt;
+  }
+
+  // ═══ CURVE ════════════════════════════════════════════════════
+  function updateCurve(dt) {
+    curveTimer -= dt;
+    if (curveTimer <= 0) {
+      curveTarget = (Math.random() * 2 - 1) * 0.92;
+      curveTimer  = 4 + Math.random() * 4;
+    }
+    curveVal = lerp(curveVal, curveTarget, dt * 0.85);
+  }
+
+  // ═══ SPEED CONTROL ════════════════════════════════════════════
+  //  - Auto-ramp: floor speed increases over time.
+  //  - Braking:   player actively slows below ramp floor.
+  //  - Boosting:  player actively accelerates above ramp floor.
+  //  - Neutral:   speed recovers toward ramp floor.
+  function rampSpeed(dt) {
+    const t    = clamp((TIME_LIMIT - timeLeft) / RAMP_TIME, 0, 1);
+    const ramp = lerp(SPD_BASE, SPD_CAP, t * t);  // auto-ramp floor
+
+    if (accelInput > 0) {
+      // Boost: accelerate toward cap faster than auto-ramp
+      speedMult = Math.min(SPD_CAP, speedMult + ACCEL_RATE * dt);
+    } else if (accelInput < 0) {
+      // Brake: hard deceleration, can go below ramp floor
+      speedMult = Math.max(0, speedMult - BRAKE_RATE * dt);
+    } else {
+      // Neutral: drift back toward ramp floor
+      if (speedMult < ramp) speedMult = Math.min(speedMult + dt * 0.8, ramp);
+      else                  speedMult = Math.max(speedMult - dt * 0.4, ramp);
+    }
+  }
+
+  // Crash counter pips in HUD
+  function updateCrashHUD() {
+    const el = document.getElementById('crash-pips');
+    if (!el) return;
+    el.textContent = '💥'.repeat(crashCount) + '🔘'.repeat(Math.max(0, MAX_CRASHES - crashCount));
+  }
+
+  function countPass() {
+    passed++;
+    updateHUD();
+    // Do not call endGame here anymore, must wait for finish line
+  }
+
+  // ═══ HUD ══════════════════════════════════════════════════════
+  function updateHUD() {
+    document.getElementById('passed-val').textContent = `${passed} / ${GOAL}`;
+    document.getElementById('progress-bar').style.width = `${(passed / GOAL) * 100}%`;
+    document.getElementById('speed-val').textContent = speedMult.toFixed(1) + 'x';
+    const m = Math.floor(Math.max(0, timeLeft) / 60), s = Math.floor(Math.max(0, timeLeft) % 60);
+    const el = document.getElementById('timer-val');
+    el.textContent = `${m}:${s.toString().padStart(2,'0')}`;
+    el.classList.toggle('warning', timeLeft < 20);
+  }
+
+  // ═══ SPEED LINES ══════════════════════════════════════════════
+  function drawSpeedLines() {
+    if (speedMult < 1.8) return;
+    const a = Math.min(0.22, (speedMult - 1.8) * 0.14);
+    ctx.save(); ctx.strokeStyle = `rgba(255,255,255,${a})`; ctx.lineWidth = 0.9;
+    ctx.setLineDash([5, 10]);
+    for (let i = 0; i < 5; i++) {
+      const lx = 20 + Math.random() * W * 0.35;
+      const rx = W - 20 - Math.random() * W * 0.35;
+      const ly = ROAD_TOP_Y + Math.random() * (H - ROAD_TOP_Y);
+      ctx.beginPath(); ctx.moveTo(lx, ly); ctx.lineTo(lx - 8, ly + 20); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(rx, ly); ctx.lineTo(rx + 8, ly + 20); ctx.stroke();
+    }
+    ctx.setLineDash([]); ctx.restore();
+  }
+
+  // ═══ LOOP ══════════════════════════════════════════════════════
+  function update(dt) {
+    if (!isFinished) {
+      timeLeft -= dt;
+      if (timeLeft <= 0) {
+        timeLeft = 0;
+        // Spawn finish line at the horizon
+        if (finishLineY === -1) {
+          finishLineY = 0.02;
+          isFinished = true;
+        }
+      }
+    }
+    
+    if (isFinished && finishLineY !== -1) {
+       // Advance finish line exactly like cars
+       finishLineY += speedMult * BASE_ADV * dt;
+       if (finishLineY >= 1.05) { // crossed player
+          if (passed >= GOAL) endGame('win');
+          else endGame('lose');
+          return;
+       }
+    }
+
+    roadOffset = (roadOffset + 0.9 * speedMult * dt) % 1;
+    updateCurve(dt);
+    rampSpeed(dt);
+    spawnTimer -= dt;
+    if (spawnTimer <= 0 && !isFinished) {
+      const activeUnpassed = cars.filter(c => !c.counted && !c.dead).length;
+      if (passed + activeUnpassed < GOAL) {
+        const activeCars = cars.filter(c => c.roadY > 0.0 && c.roadY < 1.0).length;
+        if (activeCars < 4) spawnCar();
+      }
+      // Spawn faster at high speed, but with a floor
+      spawnTimer = Math.max(1.5, (3.5 + Math.random() * 2.0) / Math.max(1, speedMult));
+    }
+    updatePlayer(dt);
+    updateCars(dt);
+    
+    // Update skid marks
+    skidMarks.forEach(s => {
+      s.roadY += speedMult * BASE_ADV * dt;
+      s.life -= dt;
+    });
+    skidMarks = skidMarks.filter(s => s.roadY < 1.4 && s.life > 0);
+
+    resolveCollisions();
+    updateHUD();
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    drawScene();
+    drawRoad();
+
+    // Draw skid marks
+    ctx.fillStyle = 'rgba(20,20,20,0.6)';
+    skidMarks.forEach(s => {
+      if (s.roadY > 0 && s.roadY < 1.1) {
+        const y = ROAD_TOP_Y + s.roadY * (ROAD_BOT_Y - ROAD_TOP_Y);
+        const rw = roadW(y);
+        const cx = roadCX(y) + s.laneOff * rw * 0.5;
+        const markW = rw * 0.15;
+        const markH = rw * 0.05;
+        ctx.globalAlpha = clamp(s.life * 0.5, 0, 0.6);
+        ctx.beginPath();
+        ctx.ellipse(cx - markW*0.6, y, markW*0.2, markH, 0, 0, Math.PI*2);
+        ctx.ellipse(cx + markW*0.6, y, markW*0.2, markH, 0, 0, Math.PI*2);
+        ctx.fill();
+      }
+    });
+    ctx.globalAlpha = 1.0;
+
+    // Enemy cars, back-to-front
+    [...cars].sort((a,b) => a.roadY - b.roadY).forEach(car => {
+      if (car.sy + car.sh > ROAD_TOP_Y - 4) {
+        // Curve angle
+        let angle = roadAngle(car.sy + car.sh/2);
+        // Tilt creates pseudo-3D: 0.4 when far, 1.0 when close (cenital)
+        const tilt = clamp(0.3 + (car.roadY * 0.7), 0.3, 1.0);
+        
+        const opacity = clamp((car.roadY - 0.02) * 6, 0, 1);
+        drawCar(car.sx, car.sy, car.sw, car.sh, car.color, car.hitFlash, angle, opacity, tilt);
+      }
+    });
+
+    // Screen flash on crash
+    if (crashFlash > 0) {
+      ctx.fillStyle = `rgba(255,60,0,${Math.min(0.40, crashFlash * 1.6)})`;
+      ctx.fillRect(0, 0, W, H);
+    }
+
+    // Player car
+    const pAngle = roadAngle(PLAYER_Y + PH/2) + playerSteer * 0.25; // added steering visual rotation
+    drawCar(playerX + PW/2, PLAYER_Y, PW, PH, PLAYER_COLOR, crashFlash > 0.35, pAngle, 1, 1.0);
+    
+    // Finish Line
+    if (isFinished && finishLineY > 0 && finishLineY < 1.1) {
+      const y = ROAD_TOP_Y + finishLineY * (ROAD_BOT_Y - ROAD_TOP_Y);
+      const rw = roadW(y);
+      const cx = roadCX(y);
+      ctx.save();
+      ctx.translate(cx, y);
+      ctx.rotate(roadAngle(y));
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(-rw/2, -8, rw, 16);
+      ctx.fillStyle = '#000000';
+      const chkW = rw / 16;
+      for(let r = 0; r < 2; r++) {
+         for(let c = 0; c < 16; c++) {
+            if ((r + c) % 2 === 0) ctx.fillRect(-rw/2 + c*chkW, -8 + r*8, chkW, 8);
+         }
+      }
+      ctx.restore();
+    }
+    
+    drawSpeedLines();
+  }
+
+  function loop(ts) {
+    if (state !== 'playing') return;
+    if (lastTs === null) lastTs = ts;
+    const dt = clamp((ts - lastTs) / 1000, 0, 0.05);
+    lastTs = ts;
+    update(dt); draw();
+    animId = requestAnimationFrame(loop);
+  }
+
+  // ═══ CONTROL ══════════════════════════════════════════════════
+  function startGame() {
+    passed = 0; timeLeft = TIME_LIMIT; speedMult = SPD_BASE;
+    playerX = W / 2 - PW / 2; crashFlash = 0; crashCount = 0; accelInput = 0;
+    cars = []; skidMarks = []; spawnTimer = 1.8; roadOffset = 0;
+    playerSteer = 0;
+    curveVal = 0; curveTarget = 0; curveTimer = 3;
+    finishLineY = -1; isFinished = false;
+    lastTs = null;
+    if (animId) cancelAnimationFrame(animId);
+    hideAll(); state = 'playing'; updateHUD(); updateCrashHUD();
+    animId = requestAnimationFrame(loop);
+  }
+
+  function endGame(result) {
+    state = result;
+    if (animId) cancelAnimationFrame(animId);
+    if (result === 'win') {
+      const e = TIME_LIMIT - timeLeft;
+      document.getElementById('win-stat').textContent =
+        `Tiempo: ${Math.floor(e/60)}:${Math.floor(e%60).toString().padStart(2,'0')}`;
+      show('overlay-win');
+    } else if (result === 'crash') {
+      document.getElementById('crash-stat').textContent = `Pasaste ${passed} de ${GOAL} autos`;
+      show('overlay-crash');
+    } else {
+      document.getElementById('lose-stat').textContent = `Pasaste ${passed} de ${GOAL} autos`;
+      show('overlay-lose');
+    }
+  }
+
+  function show(id) {
+    document.querySelectorAll('.overlay').forEach(el => el.classList.add('hidden'));
+    document.getElementById(id)?.classList.remove('hidden');
+  }
+  function hideAll() {
+    document.querySelectorAll('.overlay').forEach(el => el.classList.add('hidden'));
+  }
+
+  // ═══ INIT ════════════════════════════════════════════════════
+  function init() {
+    canvas = document.getElementById('game-canvas');
+    ctx    = canvas.getContext('2d');
+
+    // Keyboard
+    window.addEventListener('keydown', e => {
+      keys[e.key] = true;
+      if (['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(e.key)) e.preventDefault();
+    });
+    window.addEventListener('keyup', e => { keys[e.key] = false; });
+
+    // Mobile control buttons — track multi-touch so holding left + accel works
+    function bindCtrl(id, flag) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const press   = e => { ctrlTouch[flag] = true;  el.classList.add('pressed');    e.preventDefault(); };
+      const release = e => { ctrlTouch[flag] = false; el.classList.remove('pressed'); e.preventDefault(); };
+      el.addEventListener('touchstart',  press,   {passive:false});
+      el.addEventListener('touchend',    release, {passive:false});
+      el.addEventListener('touchcancel', release, {passive:false});
+      // Also work with mouse on desktop
+      el.addEventListener('mousedown',  press);
+      el.addEventListener('mouseup',    release);
+      el.addEventListener('mouseleave', release);
+    }
+    bindCtrl('ctrl-left',  'left');
+    bindCtrl('ctrl-right', 'right');
+    bindCtrl('ctrl-brake', 'brake');
+    bindCtrl('ctrl-accel', 'accel');
+
+    document.getElementById('btn-start').addEventListener('click', startGame);
+    document.getElementById('btn-win-restart').addEventListener('click', startGame);
+    document.getElementById('btn-lose-restart').addEventListener('click', startGame);
+    document.getElementById('btn-crash-restart').addEventListener('click', startGame);
+
+    // Idle preview
+    drawScene(); drawRoad();
+    drawCar(W/2, PLAYER_Y, PW, PH, PLAYER_COLOR, false);
+  }
+
+  // roundRect polyfill
+  if (!CanvasRenderingContext2D.prototype.roundRect) {
+    CanvasRenderingContext2D.prototype.roundRect = function(x,y,w,h,r) {
+      if(w<2*r)r=w/2; if(h<2*r)r=h/2;
+      this.beginPath();
+      this.moveTo(x+r,y); this.arcTo(x+w,y,x+w,y+h,r);
+      this.arcTo(x+w,y+h,x,y+h,r); this.arcTo(x,y+h,x,y,r);
+      this.arcTo(x,y,x+w,y,r); this.closePath(); return this;
+    };
+  }
+
+  window.addEventListener('DOMContentLoaded', init);
+})();
+</script>
+</body>
+</html>
