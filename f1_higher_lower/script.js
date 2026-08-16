@@ -7,10 +7,12 @@ let isAnimating = false;
 let replaceLeftNext = false; // Alternates every round
 let keptSide = null; // Track which driver was kept
 let currentMode = 'wins'; // 'wins' or 'gps'
+let seenDrivers = []; // Track recently seen drivers
 
 // Load drivers data
 async function loadData() {
     try {
+        seenDrivers = []; // Clear seen drivers when loading new mode
         const file = currentMode === 'wins' ? '../f1_wins.json' : '../f1_gps.json';
         const rawResponse = await fetch(file + '?t=' + new Date().getTime());
         drivers = await rawResponse.json();
@@ -47,8 +49,22 @@ async function loadData() {
 }
 
 function getRandomDriver() {
-    const index = Math.floor(Math.random() * drivers.length);
-    return drivers[index];
+    let limit = Math.floor(drivers.length * 0.75);
+    let candidate;
+    let attempts = 0;
+    do {
+        const index = Math.floor(Math.random() * drivers.length);
+        candidate = drivers[index];
+        attempts++;
+        if (attempts > 1000) break; // Safety fallback
+    } while (seenDrivers.includes(candidate.driver));
+    
+    seenDrivers.push(candidate.driver);
+    if (seenDrivers.length > limit) {
+        seenDrivers.shift();
+    }
+    
+    return candidate;
 }
 
 function initGame() {
@@ -69,9 +85,6 @@ function initGame() {
     
     currentLeft = getRandomDriver();
     currentRight = getRandomDriver();
-    while (currentLeft.driver === currentRight.driver) {
-        currentRight = getRandomDriver();
-    }
     
     updateUI();
 }
@@ -79,15 +92,9 @@ function initGame() {
 function advanceRound() {
     if (replaceLeftNext) {
         currentLeft = getRandomDriver();
-        while (currentLeft.driver === currentRight.driver) {
-            currentLeft = getRandomDriver();
-        }
         keptSide = 'right';
     } else {
         currentRight = getRandomDriver();
-        while (currentRight.driver === currentLeft.driver) {
-            currentRight = getRandomDriver();
-        }
         keptSide = 'left';
     }
     replaceLeftNext = !replaceLeftNext;
