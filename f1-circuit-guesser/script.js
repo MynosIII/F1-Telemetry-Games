@@ -60,7 +60,6 @@ async function init() {
     document.getElementById('btn-back').addEventListener('click', showHome);
     
     hardForm.addEventListener('submit', handleHardSubmit);
-    btnNext.addEventListener('click', nextRound);
 }
 
 function startGame(mode) {
@@ -216,7 +215,6 @@ function handleWin() {
 }
 
 function handleLoss() {
-    updateScore(0); // Reset score or just not increment? Let's reset on loss
     showFeedback(false);
 }
 
@@ -247,12 +245,15 @@ function showFeedback(isWin) {
     
     feedbackContainer.classList.remove('hidden');
     feedbackContainer.className = `feedback ${isWin ? 'success' : 'error'}`;
-    feedbackTitle.textContent = isWin ? 'Correct!' : 'Incorrect!';
+    feedbackTitle.textContent = isWin ? 'Correct!' : 'Game Over!';
     
     const fullName = currentCircuit.fullName || currentCircuit.name;
     feedbackDesc.innerHTML = isWin 
         ? `You guessed it right. It's <strong>${currentCircuit.name}</strong>.`
-        : `The correct answer was <strong>${currentCircuit.name}</strong>.<br><small>${fullName}</small>`;
+        : `The correct answer was <strong>${currentCircuit.name}</strong>.<br><small>${fullName}</small><br><br>Final Streak: <strong>${score}</strong>`;
+        
+    btnNext.textContent = isWin ? 'Next Circuit' : 'Play Again';
+    btnNext.onclick = isWin ? nextRound : () => startGame(currentMode);
 }
 
 function updateScore(newScore) {
