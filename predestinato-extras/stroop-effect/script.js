@@ -11,6 +11,7 @@ let score = 0;
 let timeLeft = 2.0;
 let timerInterval;
 let currentColorHex = '';
+let currentColorName = '';
 let gameActive = false;
 
 const wordDisplay = document.getElementById('word-display');
@@ -19,6 +20,7 @@ const timeDisplay = document.getElementById('time');
 const progressBar = document.getElementById('progress-bar');
 const colorButtonsContainer = document.getElementById('color-buttons');
 const gameOverScreen = document.getElementById('game-over');
+const gameOverReason = document.getElementById('game-over-reason');
 const startScreen = document.getElementById('start-screen');
 const finalScoreDisplay = document.getElementById('final-score');
 const startBtn = document.getElementById('start-btn');
@@ -69,6 +71,7 @@ function nextRound() {
 
     const wordText = colors[wordIndex].name;
     currentColorHex = colors[colorIndex].hex;
+    currentColorName = colors[colorIndex].name;
 
     wordDisplay.textContent = wordText;
     wordDisplay.style.color = currentColorHex;
@@ -82,7 +85,7 @@ function nextRound() {
         if (timeLeft <= 0) {
             timeLeft = 0;
             updateTimerDisplay();
-            endGame();
+            endGame("You ran out of time!");
         } else {
             updateTimerDisplay();
         }
@@ -111,11 +114,11 @@ function handleGuess(guessedHex) {
         scoreDisplay.textContent = score;
         nextRound();
     } else {
-        endGame();
+        endGame(`Wrong! The font color was ${currentColorName}.`);
     }
 }
 
-function endGame() {
+function endGame(reason) {
     gameActive = false;
     clearInterval(timerInterval);
     
@@ -123,6 +126,7 @@ function endGame() {
     const btns = document.querySelectorAll('.color-btn');
     btns.forEach(btn => btn.disabled = true);
 
+    gameOverReason.textContent = reason;
     finalScoreDisplay.textContent = score;
     gameOverScreen.style.display = 'flex';
 }
