@@ -6,11 +6,13 @@ let highScore = 0;
 let isAnimating = false;
 let replaceLeftNext = false; // Alternates every round
 let keptSide = null; // Track which driver was kept
+let currentMode = 'wins'; // 'wins' or 'gps'
 
 // Load drivers data
 async function loadData() {
     try {
-        const rawResponse = await fetch('../f1_wins.json?t=' + new Date().getTime());
+        const file = currentMode === 'wins' ? '../f1_wins.json' : '../f1_gps.json';
+        const rawResponse = await fetch(file + '?t=' + new Date().getTime());
         drivers = await rawResponse.json();
         
         let images = {};
@@ -30,8 +32,12 @@ async function loadData() {
             }
         });
         
-        // Remove drivers with 0 wins to keep it interesting
-        drivers = drivers.filter(d => d.wins > 0);
+        // Remove drivers with 0 to keep it interesting
+        if (currentMode === 'wins') {
+            drivers = drivers.filter(d => d.wins > 0);
+        } else {
+            drivers = drivers.filter(d => d.gps > 0);
+        }
         
         initGame();
     } catch (e) {
@@ -49,6 +55,14 @@ function initGame() {
     score = 0;
     document.getElementById('score').innerText = score;
     document.getElementById('game-over').classList.add('hidden');
+    
+    // Update labels and top bar
+    const labelText = currentMode === 'wins' ? 'race wins' : 'raced GPs';
+    const topBarText = currentMode === 'wins' ? 'Click the one with more wins' : 'Click the one with more raced GPs';
+    document.getElementById('left-label').innerText = labelText;
+    document.getElementById('right-label').innerText = labelText;
+    document.getElementById('top-bar-text').innerText = topBarText;
+
     isAnimating = false;
     replaceLeftNext = false; // Start by replacing right, keeping left
     keptSide = null; // Initially no side is kept (both are new)
@@ -83,12 +97,12 @@ function advanceRound() {
 function updateUI() {
     // Left side
     document.getElementById('left-name').innerText = currentLeft.driver;
-    document.getElementById('left-stat').innerText = currentLeft.wins;
+    document.getElementById('left-stat').innerText = currentMode === 'wins' ? currentLeft.wins : currentLeft.gps;
     document.getElementById('left-bg').style.backgroundImage = `url('${currentLeft.image_url || ""}')`;
     
     // Right side
     document.getElementById('right-name').innerText = currentRight.driver;
-    document.getElementById('right-stat').innerText = currentRight.wins;
+    document.getElementById('right-stat').innerText = currentMode === 'wins' ? currentRight.wins : currentRight.gps;
     document.getElementById('right-bg').style.backgroundImage = `url('${currentRight.image_url || ""}')`;
     
     // Hide stats initially
@@ -117,10 +131,13 @@ function guess(choice) {
     document.getElementById('right-label').classList.remove('hidden');
     
     let isCorrect = false;
+    const leftVal = currentMode === 'wins' ? currentLeft.wins : currentLeft.gps;
+    const rightVal = currentMode === 'wins' ? currentRight.wins : currentRight.gps;
+
     if (choice === 'left') {
-        isCorrect = currentLeft.wins >= currentRight.wins;
+        isCorrect = leftVal >= rightVal;
     } else {
-        isCorrect = currentRight.wins >= currentLeft.wins;
+        isCorrect = rightVal >= leftVal;
     }
     
     const chosenScreen = choice === 'left' ? document.getElementById('left-screen') : document.getElementById('right-screen');
@@ -172,5 +189,13 @@ function gameOver() {
     document.getElementById('game-over').classList.remove('hidden');
 }
 
-// Start
-loadData();
+function startGame(mode) {
+    currentMode = mode;
+    document.getElementById('main-menu').classList.add('hidden');
+    loadData();
+}
+
+function backToMenu() {
+    document.getElementById('game-over').classList.add('hidden');
+    document.getElementById('main-menu').classList.remove('hidden');
+}

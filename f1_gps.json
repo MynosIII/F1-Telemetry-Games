@@ -1,0 +1,3270 @@
+[
+  {
+    "driver": "Fernando Alonso",
+    "gps": 428
+  },
+  {
+    "driver": "Lewis Hamilton",
+    "gps": 380
+  },
+  {
+    "driver": "Kimi R\u00e4ikk\u00f6nen",
+    "gps": 352
+  },
+  {
+    "driver": "Rubens Barrichello",
+    "gps": 326
+  },
+  {
+    "driver": "Jenson Button",
+    "gps": 309
+  },
+  {
+    "driver": "Michael Schumacher",
+    "gps": 308
+  },
+  {
+    "driver": "Sebastian Vettel",
+    "gps": 300
+  },
+  {
+    "driver": "Sergio P\u00e9rez",
+    "gps": 283
+  },
+  {
+    "driver": "Felipe Massa",
+    "gps": 271
+  },
+  {
+    "driver": "Riccardo Patrese",
+    "gps": 257
+  },
+  {
+    "driver": "Daniel Ricciardo",
+    "gps": 257
+  },
+  {
+    "driver": "Jarno Trulli",
+    "gps": 256
+  },
+  {
+    "driver": "Nico H\u00fclkenberg",
+    "gps": 254
+  },
+  {
+    "driver": "Valtteri Bottas",
+    "gps": 247
+  },
+  {
+    "driver": "David Coulthard",
+    "gps": 247
+  },
+  {
+    "driver": "Max Verstappen",
+    "gps": 233
+  },
+  {
+    "driver": "Carlos Sainz",
+    "gps": 232
+  },
+  {
+    "driver": "Giancarlo Fisichella",
+    "gps": 231
+  },
+  {
+    "driver": "Mark Webber",
+    "gps": 217
+  },
+  {
+    "driver": "Gerhard Berger",
+    "gps": 210
+  },
+  {
+    "driver": "Andrea de Cesaris",
+    "gps": 209
+  },
+  {
+    "driver": "Nico Rosberg",
+    "gps": 206
+  },
+  {
+    "driver": "Nelson Piquet",
+    "gps": 205
+  },
+  {
+    "driver": "Jean Alesi",
+    "gps": 202
+  },
+  {
+    "driver": "Alain Prost",
+    "gps": 202
+  },
+  {
+    "driver": "Michele Alboreto",
+    "gps": 194
+  },
+  {
+    "driver": "Lance Stroll",
+    "gps": 191
+  },
+  {
+    "driver": "Nigel Mansell",
+    "gps": 190
+  },
+  {
+    "driver": "Kevin Magnussen",
+    "gps": 186
+  },
+  {
+    "driver": "Nick Heidfeld",
+    "gps": 184
+  },
+  {
+    "driver": "Romain Grosjean",
+    "gps": 181
+  },
+  {
+    "driver": "Esteban Ocon",
+    "gps": 180
+  },
+  {
+    "driver": "Ralf Schumacher",
+    "gps": 180
+  },
+  {
+    "driver": "Pierre Gasly",
+    "gps": 178
+  },
+  {
+    "driver": "Graham Hill",
+    "gps": 177
+  },
+  {
+    "driver": "Jacques Laffite",
+    "gps": 177
+  },
+  {
+    "driver": "Charles Leclerc",
+    "gps": 173
+  },
+  {
+    "driver": "Niki Lauda",
+    "gps": 173
+  },
+  {
+    "driver": "Jacques Villeneuve",
+    "gps": 165
+  },
+  {
+    "driver": "Mika H\u00e4kkinen",
+    "gps": 163
+  },
+  {
+    "driver": "Thierry Boutsen",
+    "gps": 163
+  },
+  {
+    "driver": "Johnny Herbert",
+    "gps": 162
+  },
+  {
+    "driver": "Ayrton Senna",
+    "gps": 161
+  },
+  {
+    "driver": "Olivier Panis",
+    "gps": 158
+  },
+  {
+    "driver": "Martin Brundle",
+    "gps": 158
+  },
+  {
+    "driver": "Heinz-Harald Frentzen",
+    "gps": 158
+  },
+  {
+    "driver": "George Russell",
+    "gps": 152
+  },
+  {
+    "driver": "John Watson",
+    "gps": 152
+  },
+  {
+    "driver": "Lando Norris",
+    "gps": 152
+  },
+  {
+    "driver": "Ren\u00e9 Arnoux",
+    "gps": 151
+  },
+  {
+    "driver": "Derek Warwick",
+    "gps": 148
+  },
+  {
+    "driver": "Eddie Irvine",
+    "gps": 147
+  },
+  {
+    "driver": "Carlos Reutemann",
+    "gps": 146
+  },
+  {
+    "driver": "Emerson Fittipaldi",
+    "gps": 146
+  },
+  {
+    "driver": "Jean-Pierre Jarier",
+    "gps": 138
+  },
+  {
+    "driver": "Eddie Cheever",
+    "gps": 132
+  },
+  {
+    "driver": "Clay Regazzoni",
+    "gps": 131
+  },
+  {
+    "driver": "Alexander Albon",
+    "gps": 129
+  },
+  {
+    "driver": "Adrian Sutil",
+    "gps": 128
+  },
+  {
+    "driver": "Jack Brabham",
+    "gps": 128
+  },
+  {
+    "driver": "Mario Andretti",
+    "gps": 128
+  },
+  {
+    "driver": "Ronnie Peterson",
+    "gps": 123
+  },
+  {
+    "driver": "Pierluigi Martini",
+    "gps": 120
+  },
+  {
+    "driver": "Patrick Tambay",
+    "gps": 117
+  },
+  {
+    "driver": "Alan Jones",
+    "gps": 117
+  },
+  {
+    "driver": "Jacky Ickx",
+    "gps": 116
+  },
+  {
+    "driver": "Damon Hill",
+    "gps": 116
+  },
+  {
+    "driver": "Yuki Tsunoda",
+    "gps": 114
+  },
+  {
+    "driver": "Keke Rosberg",
+    "gps": 114
+  },
+  {
+    "driver": "John Surtees",
+    "gps": 112
+  },
+  {
+    "driver": "Daniil Kvyat",
+    "gps": 112
+  },
+  {
+    "driver": "Denny Hulme",
+    "gps": 112
+  },
+  {
+    "driver": "Jody Scheckter",
+    "gps": 112
+  },
+  {
+    "driver": "Heikki Kovalainen",
+    "gps": 112
+  },
+  {
+    "driver": "Mika Salo",
+    "gps": 111
+  },
+  {
+    "driver": "Philippe Alliot",
+    "gps": 110
+  },
+  {
+    "driver": "Elio de Angelis",
+    "gps": 109
+  },
+  {
+    "driver": "Jochen Mass",
+    "gps": 107
+  },
+  {
+    "driver": "Jos Verstappen",
+    "gps": 107
+  },
+  {
+    "driver": "Jo Bonnier",
+    "gps": 106
+  },
+  {
+    "driver": "Pedro de la Rosa",
+    "gps": 106
+  },
+  {
+    "driver": "Bruce McLaren",
+    "gps": 103
+  },
+  {
+    "driver": "Chris Amon",
+    "gps": 102
+  },
+  {
+    "driver": "Jackie Stewart",
+    "gps": 100
+  },
+  {
+    "driver": "Robert Kubica",
+    "gps": 99
+  },
+  {
+    "driver": "Pedro Diniz",
+    "gps": 99
+  },
+  {
+    "driver": "Marcus Ericsson",
+    "gps": 97
+  },
+  {
+    "driver": "Jo Siffert",
+    "gps": 97
+  },
+  {
+    "driver": "Pastor Maldonado",
+    "gps": 96
+  },
+  {
+    "driver": "Juan Pablo Montoya",
+    "gps": 95
+  },
+  {
+    "driver": "Patrick Depailler",
+    "gps": 95
+  },
+  {
+    "driver": "Timo Glock",
+    "gps": 95
+  },
+  {
+    "driver": "Ivan Capelli",
+    "gps": 95
+  },
+  {
+    "driver": "Ukyo Katayama",
+    "gps": 95
+  },
+  {
+    "driver": "James Hunt",
+    "gps": 93
+  },
+  {
+    "driver": "Takuma Sato",
+    "gps": 91
+  },
+  {
+    "driver": "Dan Gurney",
+    "gps": 87
+  },
+  {
+    "driver": "Jean-Pierre Beltoise",
+    "gps": 85
+  },
+  {
+    "driver": "Maurice Trintignant",
+    "gps": 84
+  },
+  {
+    "driver": "Jonathan Palmer",
+    "gps": 84
+  },
+  {
+    "driver": "Marc Surer",
+    "gps": 83
+  },
+  {
+    "driver": "Vitantonio Liuzzi",
+    "gps": 80
+  },
+  {
+    "driver": "Stefan Johansson",
+    "gps": 79
+  },
+  {
+    "driver": "Piercarlo Ghinzani",
+    "gps": 79
+  },
+  {
+    "driver": "Hans-Joachim Stuck",
+    "gps": 77
+  },
+  {
+    "driver": "Alessandro Nannini",
+    "gps": 77
+  },
+  {
+    "driver": "Kamui Kobayashi",
+    "gps": 76
+  },
+  {
+    "driver": "Maur\u00edcio Gugelmin",
+    "gps": 75
+  },
+  {
+    "driver": "Satoru Nakajima",
+    "gps": 75
+  },
+  {
+    "driver": "Vittorio Brambilla",
+    "gps": 74
+  },
+  {
+    "driver": "Stefano Modena",
+    "gps": 73
+  },
+  {
+    "driver": "Didier Pironi",
+    "gps": 72
+  },
+  {
+    "driver": "Jim Clark",
+    "gps": 72
+  },
+  {
+    "driver": "Carlos Pace",
+    "gps": 72
+  },
+  {
+    "driver": "Oscar Piastri",
+    "gps": 70
+  },
+  {
+    "driver": "Bruno Giacomelli",
+    "gps": 69
+  },
+  {
+    "driver": "Alexander Wurz",
+    "gps": 69
+  },
+  {
+    "driver": "Gianni Morbidelli",
+    "gps": 68
+  },
+  {
+    "driver": "Guanyu Zhou",
+    "gps": 68
+  },
+  {
+    "driver": "Gilles Villeneuve",
+    "gps": 68
+  },
+  {
+    "driver": "Stirling Moss",
+    "gps": 67
+  },
+  {
+    "driver": "Aguri Suzuki",
+    "gps": 66
+  },
+  {
+    "driver": "Teo Fabi",
+    "gps": 64
+  },
+  {
+    "driver": "Jyrki J\u00e4rvilehto",
+    "gps": 62
+  },
+  {
+    "driver": "Antonio Giovinazzi",
+    "gps": 62
+  },
+  {
+    "driver": "Jochen Rindt",
+    "gps": 61
+  },
+  {
+    "driver": "Mark Blundell",
+    "gps": 61
+  },
+  {
+    "driver": "Nicholas Latifi",
+    "gps": 61
+  },
+  {
+    "driver": "\u00c9rik Comas",
+    "gps": 60
+  },
+  {
+    "driver": "Esteban Guti\u00e9rrez",
+    "gps": 59
+  },
+  {
+    "driver": "Paul di Resta",
+    "gps": 59
+  },
+  {
+    "driver": "Vitaly Petrov",
+    "gps": 58
+  },
+  {
+    "driver": "Arturo Merzario",
+    "gps": 58
+  },
+  {
+    "driver": "Jean-\u00c9ric Vergne",
+    "gps": 58
+  },
+  {
+    "driver": "Harry Schell",
+    "gps": 57
+  },
+  {
+    "driver": "Alex Caffi",
+    "gps": 56
+  },
+  {
+    "driver": "Henri Pescarolo",
+    "gps": 56
+  },
+  {
+    "driver": "S\u00e9bastien Buemi",
+    "gps": 55
+  },
+  {
+    "driver": "Innes Ireland",
+    "gps": 55
+  },
+  {
+    "driver": "Rolf Stommelen",
+    "gps": 54
+  },
+  {
+    "driver": "Pedro Rodr\u00edguez",
+    "gps": 54
+  },
+  {
+    "driver": "Philippe Streiff",
+    "gps": 54
+  },
+  {
+    "driver": "Richie Ginther",
+    "gps": 53
+  },
+  {
+    "driver": "Luca Badoer",
+    "gps": 52
+  },
+  {
+    "driver": "Jean Behra",
+    "gps": 52
+  },
+  {
+    "driver": "Juan Fangio",
+    "gps": 51
+  },
+  {
+    "driver": "Jackie Oliver",
+    "gps": 51
+  },
+  {
+    "driver": "Mike Hailwood",
+    "gps": 51
+  },
+  {
+    "driver": "Phil Hill",
+    "gps": 51
+  },
+  {
+    "driver": "Christian Klien",
+    "gps": 51
+  },
+  {
+    "driver": "Jean-Pierre Jabouille",
+    "gps": 50
+  },
+  {
+    "driver": "Nicola Larini",
+    "gps": 50
+  },
+  {
+    "driver": "Roy Salvadori",
+    "gps": 50
+  },
+  {
+    "driver": "Derek Daly",
+    "gps": 49
+  },
+  {
+    "driver": "Manfred Winkelhock",
+    "gps": 49
+  },
+  {
+    "driver": "Bertrand Gachot",
+    "gps": 47
+  },
+  {
+    "driver": "Fran\u00e7ois Cevert",
+    "gps": 47
+  },
+  {
+    "driver": "Bruno Senna",
+    "gps": 46
+  },
+  {
+    "driver": "Narain Karthikeyan",
+    "gps": 46
+  },
+  {
+    "driver": "Christijan Albers",
+    "gps": 46
+  },
+  {
+    "driver": "Jaime Alguersuari",
+    "gps": 46
+  },
+  {
+    "driver": "Mike Hawthorn",
+    "gps": 46
+  },
+  {
+    "driver": "\u00c9ric Bernard",
+    "gps": 45
+  },
+  {
+    "driver": "Mick Schumacher",
+    "gps": 44
+  },
+  {
+    "driver": "Lorenzo Bandini",
+    "gps": 44
+  },
+  {
+    "driver": "Roberto Moreno",
+    "gps": 43
+  },
+  {
+    "driver": "Stoffel Vandoorne",
+    "gps": 42
+  },
+  {
+    "driver": "Alessandro Zanardi",
+    "gps": 42
+  },
+  {
+    "driver": "Karl Wendlinger",
+    "gps": 42
+  },
+  {
+    "driver": "Tom Pryce",
+    "gps": 42
+  },
+  {
+    "driver": "Masten Gregory",
+    "gps": 42
+  },
+  {
+    "driver": "Olivier Grouillard",
+    "gps": 41
+  },
+  {
+    "driver": "Hector Rebaque",
+    "gps": 41
+  },
+  {
+    "driver": "Felipe Nasr",
+    "gps": 40
+  },
+  {
+    "driver": "Christian Fittipaldi",
+    "gps": 40
+  },
+  {
+    "driver": "Charles Pic",
+    "gps": 39
+  },
+  {
+    "driver": "Pascal Wehrlein",
+    "gps": 39
+  },
+  {
+    "driver": "Tony Brooks",
+    "gps": 39
+  },
+  {
+    "driver": "Louis Rosier",
+    "gps": 38
+  },
+  {
+    "driver": "Gabriele Tarquini",
+    "gps": 38
+  },
+  {
+    "driver": "Ricardo Zonta",
+    "gps": 37
+  },
+  {
+    "driver": "Christian Danner",
+    "gps": 37
+  },
+  {
+    "driver": "Tiago Monteiro",
+    "gps": 37
+  },
+  {
+    "driver": "Jolyon Palmer",
+    "gps": 37
+  },
+  {
+    "driver": "Emanuele Pirro",
+    "gps": 37
+  },
+  {
+    "driver": "Logan Sargeant",
+    "gps": 36
+  },
+  {
+    "driver": "Howden Ganley",
+    "gps": 36
+  },
+  {
+    "driver": "Mike Spence",
+    "gps": 36
+  },
+  {
+    "driver": "Marc Gen\u00e9",
+    "gps": 36
+  },
+  {
+    "driver": "Mauro Baldi",
+    "gps": 36
+  },
+  {
+    "driver": "Kazuki Nakajima",
+    "gps": 36
+  },
+  {
+    "driver": "Liam Lawson",
+    "gps": 35
+  },
+  {
+    "driver": "Max Chilton",
+    "gps": 35
+  },
+  {
+    "driver": "Wilson Fittipaldi",
+    "gps": 35
+  },
+  {
+    "driver": "Tim Schenken",
+    "gps": 34
+  },
+  {
+    "driver": "Jules Bianchi",
+    "gps": 34
+  },
+  {
+    "driver": "Brett Lunger",
+    "gps": 34
+  },
+  {
+    "driver": "Nino Farina",
+    "gps": 34
+  },
+  {
+    "driver": "Peter Collins",
+    "gps": 33
+  },
+  {
+    "driver": "Luigi Villoresi",
+    "gps": 33
+  },
+  {
+    "driver": "Shinji Nakano",
+    "gps": 33
+  },
+  {
+    "driver": "Toranosuke Takagi",
+    "gps": 32
+  },
+  {
+    "driver": "Alberto Ascari",
+    "gps": 32
+  },
+  {
+    "driver": "Gunnar Nilsson",
+    "gps": 32
+  },
+  {
+    "driver": "Pedro Lamy",
+    "gps": 32
+  },
+  {
+    "driver": "Andrea de Adamich",
+    "gps": 31
+  },
+  {
+    "driver": "Peter Gethin",
+    "gps": 30
+  },
+  {
+    "driver": "Peter Revson",
+    "gps": 30
+  },
+  {
+    "driver": "Carel Godin de Beaufort",
+    "gps": 29
+  },
+  {
+    "driver": "Piers Courage",
+    "gps": 29
+  },
+  {
+    "driver": "Robert Manzon",
+    "gps": 29
+  },
+  {
+    "driver": "Wolfgang von Trips",
+    "gps": 28
+  },
+  {
+    "driver": "Nelson Piquet Jr.",
+    "gps": 28
+  },
+  {
+    "driver": "Cristiano da Matta",
+    "gps": 28
+  },
+  {
+    "driver": "Scott Speed",
+    "gps": 28
+  },
+  {
+    "driver": "Enrique Bernoldi",
+    "gps": 28
+  },
+  {
+    "driver": "Mike Beuttler",
+    "gps": 28
+  },
+  {
+    "driver": "Rupert Keegan",
+    "gps": 27
+  },
+  {
+    "driver": "Tony Maggs",
+    "gps": 27
+  },
+  {
+    "driver": "S\u00e9bastien Bourdais",
+    "gps": 27
+  },
+  {
+    "driver": "Trevor Taylor",
+    "gps": 27
+  },
+  {
+    "driver": "Ricardo Rosset",
+    "gps": 27
+  },
+  {
+    "driver": "Oliver Bearman",
+    "gps": 27
+  },
+  {
+    "driver": "Franco Colapinto",
+    "gps": 27
+  },
+  {
+    "driver": "Luis P\u00e9rez-Sala",
+    "gps": 26
+  },
+  {
+    "driver": "Jos\u00e9 Froil\u00e1n Gonz\u00e1lez",
+    "gps": 26
+  },
+  {
+    "driver": "Giancarlo Baghetti",
+    "gps": 26
+  },
+  {
+    "driver": "Huub Rothengatter",
+    "gps": 26
+  },
+  {
+    "driver": "Luigi Musso",
+    "gps": 25
+  },
+  {
+    "driver": "Tarso Marques",
+    "gps": 25
+  },
+  {
+    "driver": "Jan Magnussen",
+    "gps": 25
+  },
+  {
+    "driver": "Brendon Hartley",
+    "gps": 25
+  },
+  {
+    "driver": "Bob Anderson",
+    "gps": 25
+  },
+  {
+    "driver": "Gabriel Bortoleto",
+    "gps": 24
+  },
+  {
+    "driver": "David Brabham",
+    "gps": 24
+  },
+  {
+    "driver": "Isack Hadjar",
+    "gps": 24
+  },
+  {
+    "driver": "Jan Lammers",
+    "gps": 24
+  },
+  {
+    "driver": "Johnny Claes",
+    "gps": 24
+  },
+  {
+    "driver": "Ian Burgess",
+    "gps": 24
+  },
+  {
+    "driver": "Eliseo Salazar",
+    "gps": 24
+  },
+  {
+    "driver": "Andrea Kimi Antonelli",
+    "gps": 24
+  },
+  {
+    "driver": "Yannick Dalmas",
+    "gps": 24
+  },
+  {
+    "driver": "Anthony Davidson",
+    "gps": 24
+  },
+  {
+    "driver": "Andrea Montermini",
+    "gps": 23
+  },
+  {
+    "driver": "Raul Boesel",
+    "gps": 23
+  },
+  {
+    "driver": "Reine Wisell",
+    "gps": 23
+  },
+  {
+    "driver": "Nikita Mazepin",
+    "gps": 22
+  },
+  {
+    "driver": "Toulo de Graffenried",
+    "gps": 22
+  },
+  {
+    "driver": "Roberto Guerrero",
+    "gps": 22
+  },
+  {
+    "driver": "Sakon Yamamoto",
+    "gps": 21
+  },
+  {
+    "driver": "Sergey Sirotkin",
+    "gps": 21
+  },
+  {
+    "driver": "Stefan Bellof",
+    "gps": 21
+  },
+  {
+    "driver": "Gast\u00f3n Mazzacane",
+    "gps": 21
+  },
+  {
+    "driver": "J\u00e9r\u00f4me d'Ambrosio",
+    "gps": 20
+  },
+  {
+    "driver": "Ant\u00f4nio Pizzonia",
+    "gps": 20
+  },
+  {
+    "driver": "Zsolt Baumgartner",
+    "gps": 20
+  },
+  {
+    "driver": "Harald Ertl",
+    "gps": 20
+  },
+  {
+    "driver": "Brian Henton",
+    "gps": 20
+  },
+  {
+    "driver": "Fran\u00e7ois Hesnault",
+    "gps": 19
+  },
+  {
+    "driver": "Will Stevens",
+    "gps": 19
+  },
+  {
+    "driver": "Chico Serra",
+    "gps": 19
+  },
+  {
+    "driver": "Lucas di Grassi",
+    "gps": 19
+  },
+  {
+    "driver": "Prince Bira",
+    "gps": 19
+  },
+  {
+    "driver": "Giedo van der Garde",
+    "gps": 19
+  },
+  {
+    "driver": "Gianmaria Bruni",
+    "gps": 18
+  },
+  {
+    "driver": "Johnny Cecotto",
+    "gps": 18
+  },
+  {
+    "driver": "Adri\u00e1n Campos",
+    "gps": 18
+  },
+  {
+    "driver": "Piero Taruffi",
+    "gps": 18
+  },
+  {
+    "driver": "Taki Inoue",
+    "gps": 18
+  },
+  {
+    "driver": "Hans Herrmann",
+    "gps": 18
+  },
+  {
+    "driver": "Ian Scheckter",
+    "gps": 18
+  },
+  {
+    "driver": "Richard Attwood",
+    "gps": 17
+  },
+  {
+    "driver": "Lucien Bianchi",
+    "gps": 17
+  },
+  {
+    "driver": "Horace Gould",
+    "gps": 17
+  },
+  {
+    "driver": "Allan McNish",
+    "gps": 17
+  },
+  {
+    "driver": "Roberto Mieres",
+    "gps": 17
+  },
+  {
+    "driver": "Cliff Allison",
+    "gps": 17
+  },
+  {
+    "driver": "Justin Wilson",
+    "gps": 16
+  },
+  {
+    "driver": "Esteban Tuero",
+    "gps": 16
+  },
+  {
+    "driver": "Ken Wharton",
+    "gps": 16
+  },
+  {
+    "driver": "Olivier Gendebien",
+    "gps": 16
+  },
+  {
+    "driver": "Felice Bonetto",
+    "gps": 16
+  },
+  {
+    "driver": "Louis Chiron",
+    "gps": 16
+  },
+  {
+    "driver": "Nanni Galli",
+    "gps": 16
+  },
+  {
+    "driver": "Alex Yoong",
+    "gps": 15
+  },
+  {
+    "driver": "Johnny Dumfries",
+    "gps": 15
+  },
+  {
+    "driver": "Danny Sullivan",
+    "gps": 15
+  },
+  {
+    "driver": "Martin Donnelly",
+    "gps": 15
+  },
+  {
+    "driver": "Luciano Burti",
+    "gps": 15
+  },
+  {
+    "driver": "Mark Donohue",
+    "gps": 15
+  },
+  {
+    "driver": "Peter Arundell",
+    "gps": 15
+  },
+  {
+    "driver": "Stuart Lewis-Evans",
+    "gps": 14
+  },
+  {
+    "driver": "Giorgio Pantano",
+    "gps": 14
+  },
+  {
+    "driver": "Ralph Firman",
+    "gps": 14
+  },
+  {
+    "driver": "Eugenio Castellotti",
+    "gps": 14
+  },
+  {
+    "driver": "Fran\u00e7ois Migault",
+    "gps": 14
+  },
+  {
+    "driver": "Paco Godia",
+    "gps": 13
+  },
+  {
+    "driver": "Ron Flockhart",
+    "gps": 13
+  },
+  {
+    "driver": "Guy Ligier",
+    "gps": 13
+  },
+  {
+    "driver": "Michael Andretti",
+    "gps": 13
+  },
+  {
+    "driver": "Jack Fairman",
+    "gps": 13
+  },
+  {
+    "driver": "Hans Binder",
+    "gps": 13
+  },
+  {
+    "driver": "Yves Cabantous",
+    "gps": 13
+  },
+  {
+    "driver": "Corrado Fabi",
+    "gps": 13
+  },
+  {
+    "driver": "Roberto Merhi",
+    "gps": 13
+  },
+  {
+    "driver": "John Miles",
+    "gps": 13
+  },
+  {
+    "driver": "Lella Lombardi",
+    "gps": 13
+  },
+  {
+    "driver": "Ludovico Scarfiotti",
+    "gps": 13
+  },
+  {
+    "driver": "Lance Macklin",
+    "gps": 13
+  },
+  {
+    "driver": "Vic Elford",
+    "gps": 13
+  },
+  {
+    "driver": "Giorgio Scarlatti",
+    "gps": 12
+  },
+  {
+    "driver": "Jim Hall",
+    "gps": 12
+  },
+  {
+    "driver": "George Follmer",
+    "gps": 12
+  },
+  {
+    "driver": "Brian Redman",
+    "gps": 12
+  },
+  {
+    "driver": "Rodger Ward",
+    "gps": 12
+  },
+  {
+    "driver": "Silvio Moser",
+    "gps": 12
+  },
+  {
+    "driver": "Rio Haryanto",
+    "gps": 12
+  },
+  {
+    "driver": "Onofre Marim\u00f3n",
+    "gps": 12
+  },
+  {
+    "driver": "Willy Mairesse",
+    "gps": 12
+  },
+  {
+    "driver": "Guy Edwards",
+    "gps": 12
+  },
+  {
+    "driver": "Philippe \u00c9tancelin",
+    "gps": 12
+  },
+  {
+    "driver": "Wolfgang Seidel",
+    "gps": 12
+  },
+  {
+    "driver": "Peter Whitehead",
+    "gps": 11
+  },
+  {
+    "driver": "Ronnie Bucknum",
+    "gps": 11
+  },
+  {
+    "driver": "Carlos Menditeguy",
+    "gps": 11
+  },
+  {
+    "driver": "David Walker",
+    "gps": 11
+  },
+  {
+    "driver": "Pascal Fabre",
+    "gps": 11
+  },
+  {
+    "driver": "Robert Doornbos",
+    "gps": 11
+  },
+  {
+    "driver": "Andr\u00e9 Pilette",
+    "gps": 11
+  },
+  {
+    "driver": "Andr\u00e9 Simon",
+    "gps": 11
+  },
+  {
+    "driver": "Nyck de Vries",
+    "gps": 11
+  },
+  {
+    "driver": "Jean-Christophe Boullion",
+    "gps": 11
+  },
+  {
+    "driver": "Paul Fr\u00e8re",
+    "gps": 11
+  },
+  {
+    "driver": "Patrick Friesacher",
+    "gps": 11
+  },
+  {
+    "driver": "Tony Bettenhausen",
+    "gps": 11
+  },
+  {
+    "driver": "Rikky von Opel",
+    "gps": 11
+  },
+  {
+    "driver": "Johnny Servoz-Gavin",
+    "gps": 11
+  },
+  {
+    "driver": "Karun Chandhok",
+    "gps": 11
+  },
+  {
+    "driver": "Karl Kling",
+    "gps": 11
+  },
+  {
+    "driver": "George Eaton",
+    "gps": 11
+  },
+  {
+    "driver": "Larry Perkins",
+    "gps": 11
+  },
+  {
+    "driver": "Dave Charlton",
+    "gps": 11
+  },
+  {
+    "driver": "Jim Rathmann",
+    "gps": 10
+  },
+  {
+    "driver": "Chris Irwin",
+    "gps": 10
+  },
+  {
+    "driver": "Bob Evans",
+    "gps": 10
+  },
+  {
+    "driver": "Umberto Maglioli",
+    "gps": 10
+  },
+  {
+    "driver": "Tony Brise",
+    "gps": 10
+  },
+  {
+    "driver": "Olivier Beretta",
+    "gps": 10
+  },
+  {
+    "driver": "Ricardo Zunino",
+    "gps": 10
+  },
+  {
+    "driver": "Alex Ribeiro",
+    "gps": 10
+  },
+  {
+    "driver": "Slim Borgudd",
+    "gps": 10
+  },
+  {
+    "driver": "Jackie Lewis",
+    "gps": 10
+  },
+  {
+    "driver": "Patrick N\u00e8ve",
+    "gps": 10
+  },
+  {
+    "driver": "Johnnie Parsons",
+    "gps": 9
+  },
+  {
+    "driver": "Paolo Barilla",
+    "gps": 9
+  },
+  {
+    "driver": "Derek Bell",
+    "gps": 9
+  },
+  {
+    "driver": "Bob Bondurant",
+    "gps": 9
+  },
+  {
+    "driver": "Henry Taylor",
+    "gps": 9
+  },
+  {
+    "driver": "Troy Ruttman",
+    "gps": 9
+  },
+  {
+    "driver": "Jean-Marc Gounon",
+    "gps": 9
+  },
+  {
+    "driver": "Helmut Marko",
+    "gps": 9
+  },
+  {
+    "driver": "Jimmy Bryan",
+    "gps": 9
+  },
+  {
+    "driver": "Eddie Johnson",
+    "gps": 9
+  },
+  {
+    "driver": "Alan Brown",
+    "gps": 9
+  },
+  {
+    "driver": "Vern Schuppan",
+    "gps": 9
+  },
+  {
+    "driver": "Tony Marsh",
+    "gps": 9
+  },
+  {
+    "driver": "Tony Settember",
+    "gps": 9
+  },
+  {
+    "driver": "Siegfried Stohr",
+    "gps": 9
+  },
+  {
+    "driver": "Bernd Schneider",
+    "gps": 9
+  },
+  {
+    "driver": "Allen Berg",
+    "gps": 9
+  },
+  {
+    "driver": "John Love",
+    "gps": 9
+  },
+  {
+    "driver": "Oscar Larrauri",
+    "gps": 8
+  },
+  {
+    "driver": "Gene Hartley",
+    "gps": 8
+  },
+  {
+    "driver": "Paul Russo",
+    "gps": 8
+  },
+  {
+    "driver": "Gijs van Lennep",
+    "gps": 8
+  },
+  {
+    "driver": "Carroll Shelby",
+    "gps": 8
+  },
+  {
+    "driver": "Mois\u00e9s Solana",
+    "gps": 8
+  },
+  {
+    "driver": "Duane Carter",
+    "gps": 8
+  },
+  {
+    "driver": "David Purley",
+    "gps": 8
+  },
+  {
+    "driver": "Cesare Perdisa",
+    "gps": 8
+  },
+  {
+    "driver": "Jo Gartner",
+    "gps": 8
+  },
+  {
+    "driver": "Brian Naylor",
+    "gps": 8
+  },
+  {
+    "driver": "Sergio Mantovani",
+    "gps": 8
+  },
+  {
+    "driver": "Don Freeland",
+    "gps": 8
+  },
+  {
+    "driver": "Bruce Halford",
+    "gps": 8
+  },
+  {
+    "driver": "Fred Agabashian",
+    "gps": 8
+  },
+  {
+    "driver": "Fabrizio Barbazza",
+    "gps": 8
+  },
+  {
+    "driver": "Frank Gardner",
+    "gps": 8
+  },
+  {
+    "driver": "Johnny Thomson",
+    "gps": 8
+  },
+  {
+    "driver": "Sam Hanks",
+    "gps": 8
+  },
+  {
+    "driver": "Alan Stacey",
+    "gps": 7
+  },
+  {
+    "driver": "Domenico Schiattarella",
+    "gps": 7
+  },
+  {
+    "driver": "Jack Doohan",
+    "gps": 7
+  },
+  {
+    "driver": "Edgar Barth",
+    "gps": 7
+  },
+  {
+    "driver": "Jacques Swaters",
+    "gps": 7
+  },
+  {
+    "driver": "Bob Gerard",
+    "gps": 7
+  },
+  {
+    "driver": "Andy Linden",
+    "gps": 7
+  },
+  {
+    "driver": "Julian Bailey",
+    "gps": 7
+  },
+  {
+    "driver": "Reg Parnell",
+    "gps": 7
+  },
+  {
+    "driver": "Luigi Fagioli",
+    "gps": 7
+  },
+  {
+    "driver": "Luigi Piotti",
+    "gps": 7
+  },
+  {
+    "driver": "Franck Montagny",
+    "gps": 7
+  },
+  {
+    "driver": "Giovanni Lavaggi",
+    "gps": 7
+  },
+  {
+    "driver": "Massimiliano Papis",
+    "gps": 7
+  },
+  {
+    "driver": "\u00c9lie Bayol",
+    "gps": 7
+  },
+  {
+    "driver": "Pete Lovely",
+    "gps": 7
+  },
+  {
+    "driver": "Paul Belmondo",
+    "gps": 7
+  },
+  {
+    "driver": "Rudi Fischer",
+    "gps": 7
+  },
+  {
+    "driver": "Hernando da Silva Ramos",
+    "gps": 7
+  },
+  {
+    "driver": "Michel Lecl\u00e8re",
+    "gps": 7
+  },
+  {
+    "driver": "Kenneth McAlpine",
+    "gps": 7
+  },
+  {
+    "driver": "Renzo Zorzi",
+    "gps": 7
+  },
+  {
+    "driver": "David Hobbs",
+    "gps": 7
+  },
+  {
+    "driver": "Gregor Foitek",
+    "gps": 7
+  },
+  {
+    "driver": "Eric van de Poele",
+    "gps": 6
+  },
+  {
+    "driver": "Pierre Levegh",
+    "gps": 6
+  },
+  {
+    "driver": "Chico Landi",
+    "gps": 6
+  },
+  {
+    "driver": "Hap Sharp",
+    "gps": 6
+  },
+  {
+    "driver": "Johnny Boyd",
+    "gps": 6
+  },
+  {
+    "driver": "Ricardo Rodr\u00edguez",
+    "gps": 6
+  },
+  {
+    "driver": "Mike Parkes",
+    "gps": 6
+  },
+  {
+    "driver": "Pat Flaherty",
+    "gps": 6
+  },
+  {
+    "driver": "Gerino Gerini",
+    "gps": 6
+  },
+  {
+    "driver": "Jimmy Daywalt",
+    "gps": 6
+  },
+  {
+    "driver": "Jimmy Reece",
+    "gps": 6
+  },
+  {
+    "driver": "Jack McGrath",
+    "gps": 6
+  },
+  {
+    "driver": "Ian Ashley",
+    "gps": 6
+  },
+  {
+    "driver": "Sam Tingle",
+    "gps": 6
+  },
+  {
+    "driver": "Emanuele Naspetti",
+    "gps": 6
+  },
+  {
+    "driver": "Alex Soler-Roig",
+    "gps": 6
+  },
+  {
+    "driver": "Al Herman",
+    "gps": 5
+  },
+  {
+    "driver": "Pat O'Connor",
+    "gps": 5
+  },
+  {
+    "driver": "Gerhard Mitter",
+    "gps": 5
+  },
+  {
+    "driver": "Ed Elisian",
+    "gps": 5
+  },
+  {
+    "driver": "Raymond Sommer",
+    "gps": 5
+  },
+  {
+    "driver": "Duncan Hamilton",
+    "gps": 5
+  },
+  {
+    "driver": "Eric Brandon",
+    "gps": 5
+  },
+  {
+    "driver": "Clemar Bucci",
+    "gps": 5
+  },
+  {
+    "driver": "Walt Faulkner",
+    "gps": 5
+  },
+  {
+    "driver": "Alfonso de Portago",
+    "gps": 5
+  },
+  {
+    "driver": "Alexander Rossi",
+    "gps": 5
+  },
+  {
+    "driver": "Nicolas Kiesa",
+    "gps": 5
+  },
+  {
+    "driver": "Bill Vukovich",
+    "gps": 5
+  },
+  {
+    "driver": "John Taylor",
+    "gps": 5
+  },
+  {
+    "driver": "Al Keller",
+    "gps": 5
+  },
+  {
+    "driver": "Dick Rathmann",
+    "gps": 5
+  },
+  {
+    "driver": "Bob Christie",
+    "gps": 5
+  },
+  {
+    "driver": "Jacques Pollet",
+    "gps": 5
+  },
+  {
+    "driver": "Peter Hirt",
+    "gps": 5
+  },
+  {
+    "driver": "Consalvo Sanesi",
+    "gps": 5
+  },
+  {
+    "driver": "Chuck Stevenson",
+    "gps": 5
+  },
+  {
+    "driver": "Ivor Bueb",
+    "gps": 5
+  },
+  {
+    "driver": "Jimmy Davies",
+    "gps": 5
+  },
+  {
+    "driver": "Bob Veith",
+    "gps": 5
+  },
+  {
+    "driver": "Bob Sweikert",
+    "gps": 5
+  },
+  {
+    "driver": "Franco Rol",
+    "gps": 5
+  },
+  {
+    "driver": "Skip Barber",
+    "gps": 5
+  },
+  {
+    "driver": "Chuck Daigh",
+    "gps": 5
+  },
+  {
+    "driver": "John Campbell-Jones",
+    "gps": 5
+  },
+  {
+    "driver": "Geoff Lees",
+    "gps": 5
+  },
+  {
+    "driver": "Ignazio Giunti",
+    "gps": 4
+  },
+  {
+    "driver": "Nasif Est\u00e9fano",
+    "gps": 4
+  },
+  {
+    "driver": "M\u00e1rio de Ara\u00fajo Cabral",
+    "gps": 4
+  },
+  {
+    "driver": "David Murray",
+    "gps": 4
+  },
+  {
+    "driver": "Duke Dinsmore",
+    "gps": 4
+  },
+  {
+    "driver": "Gino Bianco",
+    "gps": 4
+  },
+  {
+    "driver": "Gino Munaron",
+    "gps": 4
+  },
+  {
+    "driver": "Gerry Ashmore",
+    "gps": 4
+  },
+  {
+    "driver": "Peter de Klerk",
+    "gps": 4
+  },
+  {
+    "driver": "Eddie Russo",
+    "gps": 4
+  },
+  {
+    "driver": "Jack Turner",
+    "gps": 4
+  },
+  {
+    "driver": "Danny Ongais",
+    "gps": 4
+  },
+  {
+    "driver": "Chuck Weyant",
+    "gps": 4
+  },
+  {
+    "driver": "Peter Walker",
+    "gps": 4
+  },
+  {
+    "driver": "Michael May",
+    "gps": 4
+  },
+  {
+    "driver": "Manny Ayulo",
+    "gps": 4
+  },
+  {
+    "driver": "Eddie Sachs",
+    "gps": 4
+  },
+  {
+    "driver": "Chris Bristow",
+    "gps": 4
+  },
+  {
+    "driver": "Jerry Hoyt",
+    "gps": 4
+  },
+  {
+    "driver": "Travis Webb",
+    "gps": 4
+  },
+  {
+    "driver": "Art Cross",
+    "gps": 4
+  },
+  {
+    "driver": "Bernard Collomb",
+    "gps": 4
+  },
+  {
+    "driver": "Norberto Fontana",
+    "gps": 4
+  },
+  {
+    "driver": "Nino Vaccarella",
+    "gps": 4
+  },
+  {
+    "driver": "Keith Greene",
+    "gps": 4
+  },
+  {
+    "driver": "Yuji Ide",
+    "gps": 4
+  },
+  {
+    "driver": "Walt Hansgen",
+    "gps": 4
+  },
+  {
+    "driver": "Ray Crawford",
+    "gps": 3
+  },
+  {
+    "driver": "Kenny Acheson",
+    "gps": 3
+  },
+  {
+    "driver": "Lance Reventlow",
+    "gps": 3
+  },
+  {
+    "driver": "Johnnie Tolan",
+    "gps": 3
+  },
+  {
+    "driver": "Richard Robarts",
+    "gps": 3
+  },
+  {
+    "driver": "Riccardo Paletti",
+    "gps": 3
+  },
+  {
+    "driver": "Roberto Bussinello",
+    "gps": 3
+  },
+  {
+    "driver": "Len Sutton",
+    "gps": 3
+  },
+  {
+    "driver": "Johnny McDowell",
+    "gps": 3
+  },
+  {
+    "driver": "Duke Nalon",
+    "gps": 3
+  },
+  {
+    "driver": "George Connor",
+    "gps": 3
+  },
+  {
+    "driver": "Shorty Templeman",
+    "gps": 3
+  },
+  {
+    "driver": "Fred Wacker",
+    "gps": 3
+  },
+  {
+    "driver": "Fritz d'Orey",
+    "gps": 3
+  },
+  {
+    "driver": "Giulio Cabianca",
+    "gps": 3
+  },
+  {
+    "driver": "Guy Mairesse",
+    "gps": 3
+  },
+  {
+    "driver": "Mike Magill",
+    "gps": 3
+  },
+  {
+    "driver": "Mike Nazaruk",
+    "gps": 3
+  },
+  {
+    "driver": "Piero Carini",
+    "gps": 3
+  },
+  {
+    "driver": "Hans von Stuck",
+    "gps": 3
+  },
+  {
+    "driver": "Hideki Noda",
+    "gps": 3
+  },
+  {
+    "driver": "Henry Banks",
+    "gps": 3
+  },
+  {
+    "driver": "Ingo Hoffmann",
+    "gps": 3
+  },
+  {
+    "driver": "Ian Raby",
+    "gps": 3
+  },
+  {
+    "driver": "Jean-Denis D\u00e9l\u00e9traz",
+    "gps": 3
+  },
+  {
+    "driver": "Marshall Teague",
+    "gps": 3
+  },
+  {
+    "driver": "Maria de Filippis",
+    "gps": 3
+  },
+  {
+    "driver": "Jackie Pretorius",
+    "gps": 3
+  },
+  {
+    "driver": "Loris Kessel",
+    "gps": 3
+  },
+  {
+    "driver": "Roelof Wunderink",
+    "gps": 3
+  },
+  {
+    "driver": "Cal Niday",
+    "gps": 3
+  },
+  {
+    "driver": "Tony Gaze",
+    "gps": 3
+  },
+  {
+    "driver": "Boy Lunger",
+    "gps": 3
+  },
+  {
+    "driver": "Bill Homeier",
+    "gps": 3
+  },
+  {
+    "driver": "Paul Goldsmith",
+    "gps": 3
+  },
+  {
+    "driver": "Paul Hawkins",
+    "gps": 3
+  },
+  {
+    "driver": "Paul Pietsch",
+    "gps": 3
+  },
+  {
+    "driver": "Bob Scott",
+    "gps": 3
+  },
+  {
+    "driver": "Bill Schindler",
+    "gps": 3
+  },
+  {
+    "driver": "Alessandro Pesenti-Rossi",
+    "gps": 3
+  },
+  {
+    "driver": "Anthony Foyt",
+    "gps": 3
+  },
+  {
+    "driver": "Beppe Gabbiani",
+    "gps": 3
+  },
+  {
+    "driver": "Tony Rolt",
+    "gps": 3
+  },
+  {
+    "driver": "Andrea Chiesa",
+    "gps": 3
+  },
+  {
+    "driver": "Bill Brack",
+    "gps": 3
+  },
+  {
+    "driver": "Bill Cheesbourg",
+    "gps": 3
+  },
+  {
+    "driver": "Tom\u00e1\u0161 Enge",
+    "gps": 3
+  },
+  {
+    "driver": "Cuth Harrison",
+    "gps": 3
+  },
+  {
+    "driver": "Colin Davis",
+    "gps": 3
+  },
+  {
+    "driver": "Toni Branca",
+    "gps": 3
+  },
+  {
+    "driver": "Cliff Griffith",
+    "gps": 3
+  },
+  {
+    "driver": "Mike Wilds",
+    "gps": 3
+  },
+  {
+    "driver": "Eug\u00e8ne Chaboud",
+    "gps": 3
+  },
+  {
+    "driver": "Ottorino Volonterio",
+    "gps": 3
+  },
+  {
+    "driver": "Theo Helfrich",
+    "gps": 3
+  },
+  {
+    "driver": "David Piper",
+    "gps": 3
+  },
+  {
+    "driver": "Eddie Keizan",
+    "gps": 3
+  },
+  {
+    "driver": "Eitel Cantoni",
+    "gps": 3
+  },
+  {
+    "driver": "Alan Rees",
+    "gps": 2
+  },
+  {
+    "driver": "Alfonso Thiele",
+    "gps": 2
+  },
+  {
+    "driver": "Willi Heeks",
+    "gps": 2
+  },
+  {
+    "driver": "Al Pease",
+    "gps": 2
+  },
+  {
+    "driver": "John Fitch",
+    "gps": 2
+  },
+  {
+    "driver": "Mack Hellings",
+    "gps": 2
+  },
+  {
+    "driver": "Lee Wallard",
+    "gps": 2
+  },
+  {
+    "driver": "Red Amick",
+    "gps": 2
+  },
+  {
+    "driver": "Keith Andrews",
+    "gps": 2
+  },
+  {
+    "driver": "Kazuyoshi Hoshino",
+    "gps": 2
+  },
+  {
+    "driver": "Jud Larson",
+    "gps": 2
+  },
+  {
+    "driver": "Jorge Daponte",
+    "gps": 2
+  },
+  {
+    "driver": "Renato Pirocchi",
+    "gps": 2
+  },
+  {
+    "driver": "Ken Downing",
+    "gps": 2
+  },
+  {
+    "driver": "Pietro Fittipaldi",
+    "gps": 2
+  },
+  {
+    "driver": "Lloyd Ruby",
+    "gps": 2
+  },
+  {
+    "driver": "Les Leston",
+    "gps": 2
+  },
+  {
+    "driver": "Leslie Marr",
+    "gps": 2
+  },
+  {
+    "driver": "Lamberto Leoni",
+    "gps": 2
+  },
+  {
+    "driver": "Kurt Ahrens",
+    "gps": 2
+  },
+  {
+    "driver": "Vic Wilson",
+    "gps": 2
+  },
+  {
+    "driver": "Massimo Natili",
+    "gps": 2
+  },
+  {
+    "driver": "G\u00fcnther Bechem",
+    "gps": 2
+  },
+  {
+    "driver": "Mauri Rose",
+    "gps": 2
+  },
+  {
+    "driver": "Hermann Lang",
+    "gps": 2
+  },
+  {
+    "driver": "Roger Penske",
+    "gps": 2
+  },
+  {
+    "driver": "Max de Terra",
+    "gps": 2
+  },
+  {
+    "driver": "Jimmy Jackson",
+    "gps": 2
+  },
+  {
+    "driver": "Helmuth Koinigg",
+    "gps": 2
+  },
+  {
+    "driver": "Henri Louveau",
+    "gps": 2
+  },
+  {
+    "driver": "Jackie Holmes",
+    "gps": 2
+  },
+  {
+    "driver": "Joe James",
+    "gps": 2
+  },
+  {
+    "driver": "Rodney Nuckey",
+    "gps": 2
+  },
+  {
+    "driver": "Jim Crawford",
+    "gps": 2
+  },
+  {
+    "driver": "Jo Schlesser",
+    "gps": 2
+  },
+  {
+    "driver": "Joe Kelly",
+    "gps": 2
+  },
+  {
+    "driver": "Ernie McCoy",
+    "gps": 2
+  },
+  {
+    "driver": "Ernie Pieterse",
+    "gps": 2
+  },
+  {
+    "driver": "Ernst Klodwig",
+    "gps": 2
+  },
+  {
+    "driver": "Mike Taylor",
+    "gps": 2
+  },
+  {
+    "driver": "Neville Lederle",
+    "gps": 2
+  },
+  {
+    "driver": "Mike Thackwell",
+    "gps": 2
+  },
+  {
+    "driver": "Franck Lagorce",
+    "gps": 2
+  },
+  {
+    "driver": "Eug\u00e8ne Martin",
+    "gps": 2
+  },
+  {
+    "driver": "Franco Comotti",
+    "gps": 2
+  },
+  {
+    "driver": "Geoff Crossley",
+    "gps": 2
+  },
+  {
+    "driver": "Gene Force",
+    "gps": 2
+  },
+  {
+    "driver": "Philippe Adams",
+    "gps": 2
+  },
+  {
+    "driver": "Mike Fisher",
+    "gps": 2
+  },
+  {
+    "driver": "Sam Posey",
+    "gps": 2
+  },
+  {
+    "driver": "George Fonder",
+    "gps": 2
+  },
+  {
+    "driver": "George Abecassis",
+    "gps": 2
+  },
+  {
+    "driver": "Rudolf Krause",
+    "gps": 2
+  },
+  {
+    "driver": "Georges Berger",
+    "gps": 2
+  },
+  {
+    "driver": "Heinz Schiller",
+    "gps": 2
+  },
+  {
+    "driver": "Giacomo Russo",
+    "gps": 2
+  },
+  {
+    "driver": "Gaetano Starrabba",
+    "gps": 2
+  },
+  {
+    "driver": "Jim McWithey",
+    "gps": 2
+  },
+  {
+    "driver": "Roger Williamson",
+    "gps": 2
+  },
+  {
+    "driver": "Roland Ratzenberger",
+    "gps": 2
+  },
+  {
+    "driver": "Hubert Hahne",
+    "gps": 2
+  },
+  {
+    "driver": "Roger Laurent",
+    "gps": 2
+  },
+  {
+    "driver": "Dick Gibson",
+    "gps": 2
+  },
+  {
+    "driver": "Don Branson",
+    "gps": 2
+  },
+  {
+    "driver": "Franco Forini",
+    "gps": 2
+  },
+  {
+    "driver": "Doug Serrurier",
+    "gps": 2
+  },
+  {
+    "driver": "Emilio de Villota",
+    "gps": 2
+  },
+  {
+    "driver": "Eppie Wietzes",
+    "gps": 2
+  },
+  {
+    "driver": "Carlo Abate",
+    "gps": 2
+  },
+  {
+    "driver": "Pablo Birger",
+    "gps": 2
+  },
+  {
+    "driver": "Paddy Driver",
+    "gps": 2
+  },
+  {
+    "driver": "Cecil Green",
+    "gps": 2
+  },
+  {
+    "driver": "Chet Miller",
+    "gps": 2
+  },
+  {
+    "driver": "Charles de Tornaco",
+    "gps": 2
+  },
+  {
+    "driver": "Tom Bels\u00f8",
+    "gps": 2
+  },
+  {
+    "driver": "Tommy Byrne",
+    "gps": 2
+  },
+  {
+    "driver": "Chris Lawrence",
+    "gps": 2
+  },
+  {
+    "driver": "Toni Ulmen",
+    "gps": 2
+  },
+  {
+    "driver": "Dempsey Wilson",
+    "gps": 2
+  },
+  {
+    "driver": "Dennis Poore",
+    "gps": 2
+  },
+  {
+    "driver": "David Prophet",
+    "gps": 2
+  },
+  {
+    "driver": "David Hampshire",
+    "gps": 2
+  },
+  {
+    "driver": "Noritake Takahara",
+    "gps": 2
+  },
+  {
+    "driver": "Tim Parnell",
+    "gps": 2
+  },
+  {
+    "driver": "Patrick Gaillard",
+    "gps": 2
+  },
+  {
+    "driver": "Bobby Ball",
+    "gps": 2
+  },
+  {
+    "driver": "Bobby Rahal",
+    "gps": 2
+  },
+  {
+    "driver": "Carl Scarborough",
+    "gps": 2
+  },
+  {
+    "driver": "Brian Shawe Taylor",
+    "gps": 2
+  },
+  {
+    "driver": "Tony Crook",
+    "gps": 2
+  },
+  {
+    "driver": "Bobby Grim",
+    "gps": 2
+  },
+  {
+    "driver": "Bill Holland",
+    "gps": 2
+  },
+  {
+    "driver": "Toshio Suzuki",
+    "gps": 2
+  },
+  {
+    "driver": "Bill Aston",
+    "gps": 2
+  },
+  {
+    "driver": "Basil van Rooyen",
+    "gps": 2
+  },
+  {
+    "driver": "Arthur Legat",
+    "gps": 2
+  },
+  {
+    "driver": "Alessandro de Tomaso",
+    "gps": 2
+  },
+  {
+    "driver": "Billy Garrett",
+    "gps": 2
+  },
+  {
+    "driver": "Alberto Uria",
+    "gps": 2
+  },
+  {
+    "driver": "Walt Brown",
+    "gps": 2
+  },
+  {
+    "driver": "Adolf Brudes",
+    "gps": 1
+  },
+  {
+    "driver": "Adolfo Cruz",
+    "gps": 1
+  },
+  {
+    "driver": "Albert Scherrer",
+    "gps": 1
+  },
+  {
+    "driver": "Alberto Rodriguez Larreta",
+    "gps": 1
+  },
+  {
+    "driver": "Warwick Brown",
+    "gps": 1
+  },
+  {
+    "driver": "Wayne Weiler",
+    "gps": 1
+  },
+  {
+    "driver": "Perry McCarthy",
+    "gps": 1
+  },
+  {
+    "driver": "Peter Ashdown",
+    "gps": 1
+  },
+  {
+    "driver": "Peter Broeker",
+    "gps": 1
+  },
+  {
+    "driver": "Peter Monteverdi",
+    "gps": 1
+  },
+  {
+    "driver": "Peter Ryan",
+    "gps": 1
+  },
+  {
+    "driver": "Paul Emery",
+    "gps": 1
+  },
+  {
+    "driver": "Paul England",
+    "gps": 1
+  },
+  {
+    "driver": "Oscar G\u00e1lvez",
+    "gps": 1
+  },
+  {
+    "driver": "Oswald Karch",
+    "gps": 1
+  },
+  {
+    "driver": "Otto Stuppacher",
+    "gps": 1
+  },
+  {
+    "driver": "Mike Sparken",
+    "gps": 1
+  },
+  {
+    "driver": "Myron Fohr",
+    "gps": 1
+  },
+  {
+    "driver": "Nello Pagani",
+    "gps": 1
+  },
+  {
+    "driver": "Miguel \u00c1ngel Guerra",
+    "gps": 1
+  },
+  {
+    "driver": "Mike Harris",
+    "gps": 1
+  },
+  {
+    "driver": "Mike MacDowel",
+    "gps": 1
+  },
+  {
+    "driver": "Phil Cade",
+    "gps": 1
+  },
+  {
+    "driver": "Philip Fotheringham-Parker",
+    "gps": 1
+  },
+  {
+    "driver": "Piero Drogo",
+    "gps": 1
+  },
+  {
+    "driver": "Piero Scotti",
+    "gps": 1
+  },
+  {
+    "driver": "Masahiro Hasemi",
+    "gps": 1
+  },
+  {
+    "driver": "Max Jean",
+    "gps": 1
+  },
+  {
+    "driver": "Menato Boffa",
+    "gps": 1
+  },
+  {
+    "driver": "Michael Bleekemolen",
+    "gps": 1
+  },
+  {
+    "driver": "Marcel Balsa",
+    "gps": 1
+  },
+  {
+    "driver": "Marco Apicella",
+    "gps": 1
+  },
+  {
+    "driver": "Markus Winkelhock",
+    "gps": 1
+  },
+  {
+    "driver": "Luiz Bueno",
+    "gps": 1
+  },
+  {
+    "driver": "Luki Botha",
+    "gps": 1
+  },
+  {
+    "driver": "Larry Crockett",
+    "gps": 1
+  },
+  {
+    "driver": "Len Duncan",
+    "gps": 1
+  },
+  {
+    "driver": "Leo Kinnunen",
+    "gps": 1
+  },
+  {
+    "driver": "Leslie Johnson",
+    "gps": 1
+  },
+  {
+    "driver": "Leslie Thorne",
+    "gps": 1
+  },
+  {
+    "driver": "Pierre-Henri Raphanel",
+    "gps": 1
+  },
+  {
+    "driver": "Ray Reed",
+    "gps": 1
+  },
+  {
+    "driver": "Ken Miles",
+    "gps": 1
+  },
+  {
+    "driver": "Ken Richardson",
+    "gps": 1
+  },
+  {
+    "driver": "Kunimitsu Takahashi",
+    "gps": 1
+  },
+  {
+    "driver": "Kurt Adolff",
+    "gps": 1
+  },
+  {
+    "driver": "Kurt Kuhnke",
+    "gps": 1
+  },
+  {
+    "driver": "Joie Chitwood",
+    "gps": 1
+  },
+  {
+    "driver": "Jonathan Williams",
+    "gps": 1
+  },
+  {
+    "driver": "Josef Peters",
+    "gps": 1
+  },
+  {
+    "driver": "Jos\u00e9 Dolhem",
+    "gps": 1
+  },
+  {
+    "driver": "Juan Jover",
+    "gps": 1
+  },
+  {
+    "driver": "Juan Manuel Bordeu",
+    "gps": 1
+  },
+  {
+    "driver": "Ricardo Londo\u00f1o",
+    "gps": 1
+  },
+  {
+    "driver": "Rob Schroeder",
+    "gps": 1
+  },
+  {
+    "driver": "Rob Slotemaker",
+    "gps": 1
+  },
+  {
+    "driver": "John Nicholson",
+    "gps": 1
+  },
+  {
+    "driver": "John Rhodes",
+    "gps": 1
+  },
+  {
+    "driver": "John Riseley-Prichard",
+    "gps": 1
+  },
+  {
+    "driver": "Johnny Mantz",
+    "gps": 1
+  },
+  {
+    "driver": "Jo Vonlanthen",
+    "gps": 1
+  },
+  {
+    "driver": "Joe Fry",
+    "gps": 1
+  },
+  {
+    "driver": "John Barber",
+    "gps": 1
+  },
+  {
+    "driver": "John Cannon",
+    "gps": 1
+  },
+  {
+    "driver": "John Cordts",
+    "gps": 1
+  },
+  {
+    "driver": "John James",
+    "gps": 1
+  },
+  {
+    "driver": "Robert La Caze",
+    "gps": 1
+  },
+  {
+    "driver": "Robert O'Brien",
+    "gps": 1
+  },
+  {
+    "driver": "Roberto Bonomi",
+    "gps": 1
+  },
+  {
+    "driver": "Roberto Lippi",
+    "gps": 1
+  },
+  {
+    "driver": "Robin Montgomerie-Charrington",
+    "gps": 1
+  },
+  {
+    "driver": "Robin Widdows",
+    "gps": 1
+  },
+  {
+    "driver": "Jerry Unser",
+    "gps": 1
+  },
+  {
+    "driver": "Jes\u00fas Iglesias",
+    "gps": 1
+  },
+  {
+    "driver": "Jim Hurtubise",
+    "gps": 1
+  },
+  {
+    "driver": "Jim Rigsby",
+    "gps": 1
+  },
+  {
+    "driver": "Jimmy Stewart",
+    "gps": 1
+  },
+  {
+    "driver": "Jay Chamberlain",
+    "gps": 1
+  },
+  {
+    "driver": "Jean Lucas",
+    "gps": 1
+  },
+  {
+    "driver": "Jean-Louis Schlesser",
+    "gps": 1
+  },
+  {
+    "driver": "Jan Flinterman",
+    "gps": 1
+  },
+  {
+    "driver": "Ian Stewart",
+    "gps": 1
+  },
+  {
+    "driver": "Jack Aitken",
+    "gps": 1
+  },
+  {
+    "driver": "Helmut Niedermayr",
+    "gps": 1
+  },
+  {
+    "driver": "Herbert MacKay-Fraser",
+    "gps": 1
+  },
+  {
+    "driver": "Hiroshi Fushida",
+    "gps": 1
+  },
+  {
+    "driver": "Roger Loyer",
+    "gps": 1
+  },
+  {
+    "driver": "Rudolf Schoeller",
+    "gps": 1
+  },
+  {
+    "driver": "G\u00e9rard Larrousse",
+    "gps": 1
+  },
+  {
+    "driver": "G\u00fcnther Seiffert",
+    "gps": 1
+  },
+  {
+    "driver": "Hans Klenk",
+    "gps": 1
+  },
+  {
+    "driver": "Harry Blanchard",
+    "gps": 1
+  },
+  {
+    "driver": "Heini Walter",
+    "gps": 1
+  },
+  {
+    "driver": "Giorgio Bassi",
+    "gps": 1
+  },
+  {
+    "driver": "Graham McRae",
+    "gps": 1
+  },
+  {
+    "driver": "Graham Whitehead",
+    "gps": 1
+  },
+  {
+    "driver": "Gus Hutchison",
+    "gps": 1
+  },
+  {
+    "driver": "Guy Tunmer",
+    "gps": 1
+  },
+  {
+    "driver": "Georges Grignard",
+    "gps": 1
+  },
+  {
+    "driver": "Gary Hocking",
+    "gps": 1
+  },
+  {
+    "driver": "Geoff Duke",
+    "gps": 1
+  },
+  {
+    "driver": "George Amick",
+    "gps": 1
+  },
+  {
+    "driver": "George Constantine",
+    "gps": 1
+  },
+  {
+    "driver": "Frank Armi",
+    "gps": 1
+  },
+  {
+    "driver": "Frank Dochnal",
+    "gps": 1
+  },
+  {
+    "driver": "Fran\u00e7ois Mazet",
+    "gps": 1
+  },
+  {
+    "driver": "Fran\u00e7ois Picard",
+    "gps": 1
+  },
+  {
+    "driver": "Fred Gamble",
+    "gps": 1
+  },
+  {
+    "driver": "Fritz Riess",
+    "gps": 1
+  },
+  {
+    "driver": "Ettore Chimeri",
+    "gps": 1
+  },
+  {
+    "driver": "Eric Thompson",
+    "gps": 1
+  },
+  {
+    "driver": "Ernesto Prinoth",
+    "gps": 1
+  },
+  {
+    "driver": "Ernie de Vos",
+    "gps": 1
+  },
+  {
+    "driver": "Ernst Loof",
+    "gps": 1
+  },
+  {
+    "driver": "Erwin Bauer",
+    "gps": 1
+  },
+  {
+    "driver": "Elmer George",
+    "gps": 1
+  },
+  {
+    "driver": "St\u00e9phane Sarrazin",
+    "gps": 1
+  },
+  {
+    "driver": "Syd van der Vyver",
+    "gps": 1
+  },
+  {
+    "driver": "Teddy Pilette",
+    "gps": 1
+  },
+  {
+    "driver": "Theo Fitzau",
+    "gps": 1
+  },
+  {
+    "driver": "Desmond Titterington",
+    "gps": 1
+  },
+  {
+    "driver": "Dieter Quester",
+    "gps": 1
+  },
+  {
+    "driver": "Don Beauman",
+    "gps": 1
+  },
+  {
+    "driver": "Don Edmunds",
+    "gps": 1
+  },
+  {
+    "driver": "Dorino Serafini",
+    "gps": 1
+  },
+  {
+    "driver": "Dries van der Lof",
+    "gps": 1
+  },
+  {
+    "driver": "Dave Morgan",
+    "gps": 1
+  },
+  {
+    "driver": "David Clapham",
+    "gps": 1
+  },
+  {
+    "driver": "Colin Chapman",
+    "gps": 1
+  },
+  {
+    "driver": "Conny Andersson",
+    "gps": 1
+  },
+  {
+    "driver": "Damien Magee",
+    "gps": 1
+  },
+  {
+    "driver": "Danny Kladis",
+    "gps": 1
+  },
+  {
+    "driver": "Thomas Monarch",
+    "gps": 1
+  },
+  {
+    "driver": "Tiff Needell",
+    "gps": 1
+  },
+  {
+    "driver": "Timmy Mayer",
+    "gps": 1
+  },
+  {
+    "driver": "Tom Bridger",
+    "gps": 1
+  },
+  {
+    "driver": "Chris Craft",
+    "gps": 1
+  },
+  {
+    "driver": "Christian Goethals",
+    "gps": 1
+  },
+  {
+    "driver": "Chuck Arnold",
+    "gps": 1
+  },
+  {
+    "driver": "Clemente Biondetti",
+    "gps": 1
+  },
+  {
+    "driver": "Charles Pozzi",
+    "gps": 1
+  },
+  {
+    "driver": "Brian Hart",
+    "gps": 1
+  },
+  {
+    "driver": "Bruce Johnstone",
+    "gps": 1
+  },
+  {
+    "driver": "Bud Tingelstad",
+    "gps": 1
+  },
+  {
+    "driver": "Carl Forberg",
+    "gps": 1
+  },
+  {
+    "driver": "Bob Drake",
+    "gps": 1
+  },
+  {
+    "driver": "Bob Said",
+    "gps": 1
+  },
+  {
+    "driver": "Bobby Unser",
+    "gps": 1
+  },
+  {
+    "driver": "Brausch Niemann",
+    "gps": 1
+  },
+  {
+    "driver": "Tony Shelly",
+    "gps": 1
+  },
+  {
+    "driver": "Torsten Palm",
+    "gps": 1
+  },
+  {
+    "driver": "Trevor Blokdyk",
+    "gps": 1
+  },
+  {
+    "driver": "Bertil Roos",
+    "gps": 1
+  },
+  {
+    "driver": "Bill Cantrell",
+    "gps": 1
+  },
+  {
+    "driver": "Bill Mackey",
+    "gps": 1
+  },
+  {
+    "driver": "Bill Whitehouse",
+    "gps": 1
+  },
+  {
+    "driver": "Antonio Creus",
+    "gps": 1
+  },
+  {
+    "driver": "Archie Scott Brown",
+    "gps": 1
+  },
+  {
+    "driver": "Art Bisch",
+    "gps": 1
+  },
+  {
+    "driver": "Arthur Owen",
+    "gps": 1
+  },
+  {
+    "driver": "Azdrubal Fontes",
+    "gps": 1
+  },
+  {
+    "driver": "Bayliss Levrett",
+    "gps": 1
+  },
+  {
+    "driver": "Ben Pon",
+    "gps": 1
+  },
+  {
+    "driver": "Alfredo Pi\u00e1n",
+    "gps": 1
+  },
+  {
+    "driver": "Andr\u00e9 Guelfi",
+    "gps": 1
+  },
+  {
+    "driver": "Andr\u00e9 Lotterer",
+    "gps": 1
+  },
+  {
+    "driver": "Andr\u00e9 Milhoux",
+    "gps": 1
+  },
+  {
+    "driver": "Aldo Gordini",
+    "gps": 1
+  },
+  {
+    "driver": "Alex Blignaut",
+    "gps": 1
+  },
+  {
+    "driver": "Volker Weidler",
+    "gps": 1
+  },
+  {
+    "driver": "Walt Ader",
+    "gps": 1
+  },
+  {
+    "driver": "\u00d3scar Gonz\u00e1lez",
+    "gps": 1
+  }
+]

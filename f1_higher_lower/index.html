@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
-    <div class="top-bar">Click the one with more wins</div>
+    <div class="top-bar" id="top-bar-text">Click the one with more wins</div>
     <div class="game-container">
         <div class="score-display">Score: <span id="score">0</span></div>
         <div class="high-score-display">High Score: <span id="high-score">0</span></div>
@@ -18,7 +18,7 @@
                 <h1 id="left-name">Driver 1</h1>
                 <p>has</p>
                 <div class="stat hidden" id="left-stat">10</div>
-                <p class="wins-label hidden" id="left-label">race wins</p>
+                <p class="wins-label hidden" id="left-label"></p>
             </div>
         </div>
 
@@ -30,7 +30,7 @@
                 <h1 id="right-name">Driver 2</h1>
                 <p>has</p>
                 <div class="stat hidden" id="right-stat">5</div>
-                <p class="wins-label hidden" id="right-label">race wins</p>
+                <p class="wins-label hidden" id="right-label"></p>
             </div>
         </div>
         
@@ -39,7 +39,17 @@
             <p>You scored: <span id="final-score"></span></p>
             <div class="game-over-buttons">
                 <button class="btn btn-play-again" onclick="initGame()">Play Again</button>
+                <button class="btn btn-mode" onclick="backToMenu()">Back to Menu</button>
                 <button class="btn btn-share" onclick="shareScore()">Share Score</button>
+            </div>
+        </div>
+
+        <div class="main-menu-screen" id="main-menu">
+            <h2>F1 Higher or Lower</h2>
+            <p>Select Game Mode</p>
+            <div class="main-menu-buttons">
+                <button class="btn btn-mode" onclick="startGame('wins')">By Race Wins</button>
+                <button class="btn btn-mode" onclick="startGame('gps')">By Raced GPs</button>
             </div>
         </div>
     </div>
