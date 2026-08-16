@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 Driver Wins</title>
+    <link rel="stylesheet" href="style.css?v=6">
+</head>
+<body>
+    <div class="top-bar">Click the one with more wins</div>
+    <div class="game-container">
+        <div class="score-display">Score: <span id="score">0</span></div>
+        <div class="high-score-display">High Score: <span id="high-score">0</span></div>
+
+        <div class="screen left-screen" id="left-screen" onclick="guess('left')">
+            <div class="background-overlay" id="left-bg"></div>
+            <div class="content">
+                <h1 id="left-name">Driver 1</h1>
+                <p>has</p>
+                <div class="stat hidden" id="left-stat">10</div>
+                <p class="wins-label hidden" id="left-label">race wins</p>
+            </div>
+        </div>
+
+        <div class="vs-circle">VS</div>
+
+        <div class="screen right-screen" id="right-screen" onclick="guess('right')">
+            <div class="background-overlay" id="right-bg"></div>
+            <div class="content">
+                <h1 id="right-name">Driver 2</h1>
+                <p>has</p>
+                <div class="stat hidden" id="right-stat">5</div>
+                <p class="wins-label hidden" id="right-label">race wins</p>
+            </div>
+        </div>
+        
+        <div class="game-over-screen hidden" id="game-over">
+            <h2>Game Over</h2>
+            <p>You scored: <span id="final-score"></span></p>
+            <div class="game-over-buttons">
+                <button class="btn btn-play-again" onclick="initGame()">Play Again</button>
+                <button class="btn btn-share" onclick="shareScore()">Share Score</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js?v=6"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 Bingo Matrix</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>F1 Bingo Matrix</h1>
+            <div id="status-container">Failed Cells: <span id="failed-cells">0</span> / 3</div>
+        </header>
+        <main>
+            <div id="grid-container">
+                <!-- Grid will be generated here -->
+            </div>
+        </main>
+        
+        <div id="search-modal" class="hidden">
+            <div class="search-content">
+                <input type="text" id="driver-search" placeholder="Search for an F1 Driver..." autocomplete="off">
+                <ul id="search-results"></ul>
+                <button id="close-search">Cancel</button>
+            </div>
+        </div>
+
+        <div id="game-over-modal" class="hidden">
+            <div class="modal-content">
+                <h2 id="game-over-title">You Win!</h2>
+                <button id="play-again-btn">Play Again</button>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

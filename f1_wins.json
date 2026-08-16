@@ -1,0 +1,454 @@
+[
+  {
+    "driver": "Lewis Hamilton",
+    "wins": 105
+  },
+  {
+    "driver": "Michael Schumacher",
+    "wins": 91
+  },
+  {
+    "driver": "Max Verstappen",
+    "wins": 71
+  },
+  {
+    "driver": "Sebastian Vettel",
+    "wins": 53
+  },
+  {
+    "driver": "Alain Prost",
+    "wins": 51
+  },
+  {
+    "driver": "Ayrton Senna",
+    "wins": 41
+  },
+  {
+    "driver": "Fernando Alonso",
+    "wins": 32
+  },
+  {
+    "driver": "Nigel Mansell",
+    "wins": 31
+  },
+  {
+    "driver": "Jackie Stewart",
+    "wins": 27
+  },
+  {
+    "driver": "Niki Lauda",
+    "wins": 25
+  },
+  {
+    "driver": "Jim Clark",
+    "wins": 25
+  },
+  {
+    "driver": "Nico Rosberg",
+    "wins": 23
+  },
+  {
+    "driver": "Nelson Piquet",
+    "wins": 23
+  },
+  {
+    "driver": "Damon Hill",
+    "wins": 22
+  },
+  {
+    "driver": "Juan Fangio",
+    "wins": 22
+  },
+  {
+    "driver": "Kimi R\u00e4ikk\u00f6nen",
+    "wins": 21
+  },
+  {
+    "driver": "Mika H\u00e4kkinen",
+    "wins": 20
+  },
+  {
+    "driver": "Stirling Moss",
+    "wins": 15
+  },
+  {
+    "driver": "Jenson Button",
+    "wins": 15
+  },
+  {
+    "driver": "Emerson Fittipaldi",
+    "wins": 14
+  },
+  {
+    "driver": "Jack Brabham",
+    "wins": 14
+  },
+  {
+    "driver": "Graham Hill",
+    "wins": 14
+  },
+  {
+    "driver": "David Coulthard",
+    "wins": 13
+  },
+  {
+    "driver": "Alberto Ascari",
+    "wins": 13
+  },
+  {
+    "driver": "Mario Andretti",
+    "wins": 12
+  },
+  {
+    "driver": "Carlos Reutemann",
+    "wins": 12
+  },
+  {
+    "driver": "Alan Jones",
+    "wins": 12
+  },
+  {
+    "driver": "Rubens Barrichello",
+    "wins": 11
+  },
+  {
+    "driver": "Lando Norris",
+    "wins": 11
+  },
+  {
+    "driver": "Jacques Villeneuve",
+    "wins": 11
+  },
+  {
+    "driver": "Felipe Massa",
+    "wins": 11
+  },
+  {
+    "driver": "James Hunt",
+    "wins": 10
+  },
+  {
+    "driver": "Ronnie Peterson",
+    "wins": 10
+  },
+  {
+    "driver": "Jody Scheckter",
+    "wins": 10
+  },
+  {
+    "driver": "Gerhard Berger",
+    "wins": 10
+  },
+  {
+    "driver": "Valtteri Bottas",
+    "wins": 10
+  },
+  {
+    "driver": "Oscar Piastri",
+    "wins": 9
+  },
+  {
+    "driver": "Mark Webber",
+    "wins": 9
+  },
+  {
+    "driver": "Charles Leclerc",
+    "wins": 8
+  },
+  {
+    "driver": "Daniel Ricciardo",
+    "wins": 8
+  },
+  {
+    "driver": "Jacky Ickx",
+    "wins": 8
+  },
+  {
+    "driver": "Denny Hulme",
+    "wins": 8
+  },
+  {
+    "driver": "Juan Pablo Montoya",
+    "wins": 7
+  },
+  {
+    "driver": "Ren\u00e9 Arnoux",
+    "wins": 7
+  },
+  {
+    "driver": "John Surtees",
+    "wins": 6
+  },
+  {
+    "driver": "Sergio P\u00e9rez",
+    "wins": 6
+  },
+  {
+    "driver": "Jacques Laffite",
+    "wins": 6
+  },
+  {
+    "driver": "Gilles Villeneuve",
+    "wins": 6
+  },
+  {
+    "driver": "Ralf Schumacher",
+    "wins": 6
+  },
+  {
+    "driver": "Riccardo Patrese",
+    "wins": 6
+  },
+  {
+    "driver": "Jochen Rindt",
+    "wins": 6
+  },
+  {
+    "driver": "Clay Regazzoni",
+    "wins": 5
+  },
+  {
+    "driver": "John Watson",
+    "wins": 5
+  },
+  {
+    "driver": "Nino Farina",
+    "wins": 5
+  },
+  {
+    "driver": "Tony Brooks",
+    "wins": 5
+  },
+  {
+    "driver": "Michele Alboreto",
+    "wins": 5
+  },
+  {
+    "driver": "George Russell",
+    "wins": 5
+  },
+  {
+    "driver": "Keke Rosberg",
+    "wins": 5
+  },
+  {
+    "driver": "Carlos Sainz",
+    "wins": 4
+  },
+  {
+    "driver": "Eddie Irvine",
+    "wins": 4
+  },
+  {
+    "driver": "Bruce McLaren",
+    "wins": 4
+  },
+  {
+    "driver": "Dan Gurney",
+    "wins": 4
+  },
+  {
+    "driver": "Phil Hill",
+    "wins": 3
+  },
+  {
+    "driver": "Mike Hawthorn",
+    "wins": 3
+  },
+  {
+    "driver": "Peter Collins",
+    "wins": 3
+  },
+  {
+    "driver": "Didier Pironi",
+    "wins": 3
+  },
+  {
+    "driver": "Giancarlo Fisichella",
+    "wins": 3
+  },
+  {
+    "driver": "Heinz-Harald Frentzen",
+    "wins": 3
+  },
+  {
+    "driver": "Johnny Herbert",
+    "wins": 3
+  },
+  {
+    "driver": "Thierry Boutsen",
+    "wins": 3
+  },
+  {
+    "driver": "Wolfgang von Trips",
+    "wins": 2
+  },
+  {
+    "driver": "Patrick Depailler",
+    "wins": 2
+  },
+  {
+    "driver": "Maurice Trintignant",
+    "wins": 2
+  },
+  {
+    "driver": "Jos\u00e9 Froil\u00e1n Gonz\u00e1lez",
+    "wins": 2
+  },
+  {
+    "driver": "Jo Siffert",
+    "wins": 2
+  },
+  {
+    "driver": "Pedro Rodr\u00edguez",
+    "wins": 2
+  },
+  {
+    "driver": "Peter Revson",
+    "wins": 2
+  },
+  {
+    "driver": "Patrick Tambay",
+    "wins": 2
+  },
+  {
+    "driver": "Bill Vukovich",
+    "wins": 2
+  },
+  {
+    "driver": "Jean-Pierre Jabouille",
+    "wins": 2
+  },
+  {
+    "driver": "Elio de Angelis",
+    "wins": 2
+  },
+  {
+    "driver": "Jim Rathmann",
+    "wins": 1
+  },
+  {
+    "driver": "Jarno Trulli",
+    "wins": 1
+  },
+  {
+    "driver": "Jean Alesi",
+    "wins": 1
+  },
+  {
+    "driver": "Jean-Pierre Beltoise",
+    "wins": 1
+  },
+  {
+    "driver": "Innes Ireland",
+    "wins": 1
+  },
+  {
+    "driver": "Heikki Kovalainen",
+    "wins": 1
+  },
+  {
+    "driver": "Giancarlo Baghetti",
+    "wins": 1
+  },
+  {
+    "driver": "Gunnar Nilsson",
+    "wins": 1
+  },
+  {
+    "driver": "Esteban Ocon",
+    "wins": 1
+  },
+  {
+    "driver": "Fran\u00e7ois Cevert",
+    "wins": 1
+  },
+  {
+    "driver": "Alessandro Nannini",
+    "wins": 1
+  },
+  {
+    "driver": "Bob Sweikert",
+    "wins": 1
+  },
+  {
+    "driver": "Carlos Pace",
+    "wins": 1
+  },
+  {
+    "driver": "Jo Bonnier",
+    "wins": 1
+  },
+  {
+    "driver": "Jochen Mass",
+    "wins": 1
+  },
+  {
+    "driver": "Jimmy Bryan",
+    "wins": 1
+  },
+  {
+    "driver": "Lee Wallard",
+    "wins": 1
+  },
+  {
+    "driver": "Ludovico Scarfiotti",
+    "wins": 1
+  },
+  {
+    "driver": "Lorenzo Bandini",
+    "wins": 1
+  },
+  {
+    "driver": "Johnnie Parsons",
+    "wins": 1
+  },
+  {
+    "driver": "Pastor Maldonado",
+    "wins": 1
+  },
+  {
+    "driver": "Olivier Panis",
+    "wins": 1
+  },
+  {
+    "driver": "Peter Gethin",
+    "wins": 1
+  },
+  {
+    "driver": "Pat Flaherty",
+    "wins": 1
+  },
+  {
+    "driver": "Piero Taruffi",
+    "wins": 1
+  },
+  {
+    "driver": "Pierre Gasly",
+    "wins": 1
+  },
+  {
+    "driver": "Robert Kubica",
+    "wins": 1
+  },
+  {
+    "driver": "Rodger Ward",
+    "wins": 1
+  },
+  {
+    "driver": "Sam Hanks",
+    "wins": 1
+  },
+  {
+    "driver": "Richie Ginther",
+    "wins": 1
+  },
+  {
+    "driver": "Troy Ruttman",
+    "wins": 1
+  },
+  {
+    "driver": "Vittorio Brambilla",
+    "wins": 1
+  }
+]

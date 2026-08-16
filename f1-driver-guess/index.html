@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the F1 Driver</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>F1 Driver Guess</h1>
+        <div class="stats-header">
+            <div><span>Seasons</span><br><span>1950-2024</span></div>
+            <div><span>Stat mode</span><br><span>All</span></div>
+            <div><span>Game mode</span><br><span>Daily</span></div>
+            <div><span>Guesses</span><br><span id="guess-count">0</span></div>
+        </div>
+    </header>
+
+    <main>
+        <div class="search-container">
+            <input type="text" id="driver-input" placeholder="Type a driver's name..." autocomplete="off">
+            <div id="autocomplete-list" class="autocomplete-items"></div>
+        </div>
+
+        <div class="game-board">
+            <div class="board-header">
+                <div class="col driver-col">Drvr</div>
+                <div class="col">First year</div>
+                <div class="col">Last year</div>
+                <div class="col">WCs</div>
+                <div class="col">Wins</div>
+                <div class="col">Top 3s</div>
+                <div class="col">Pnts</div>
+                <div class="col">Poles</div>
+                <div class="col">GPs</div>
+            </div>
+            <div id="guesses-container">
+                <!-- Guesses will be dynamically added here -->
+            </div>
+        </div>
+
+        <div id="win-message" class="hidden">
+            <h2>Congratulations!</h2>
+            <p>You guessed the correct driver!</p>
+            <button id="play-again-btn">Play Again</button>
+        </div>
+    </main>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
