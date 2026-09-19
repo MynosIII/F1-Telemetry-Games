@@ -64,7 +64,7 @@ async function init() {
 
 function startGame(mode) {
     if (!circuits || circuits.length === 0) {
-        alert("Circuits data not loaded yet.");
+        alert(GameI18n.t("Circuits data not loaded yet."));
         return;
     }
     currentMode = mode;
@@ -139,6 +139,7 @@ function setupEasyMode() {
         const btn = document.createElement('button');
         btn.className = 'option-btn';
         btn.textContent = opt.name;
+        btn.dataset.circuitId = opt.id;
         btn.onclick = () => handleEasyGuess(opt.id, btn);
         optionsGrid.appendChild(btn);
     });
@@ -156,7 +157,7 @@ function handleEasyGuess(guessedId, btnElement) {
         btnElement.classList.add('wrong');
         // Highlight correct
         buttons.forEach(b => {
-            if (b.textContent === currentCircuit.name) {
+            if (b.dataset.circuitId === currentCircuit.id) {
                 b.classList.add('correct');
             }
         });
@@ -266,10 +267,11 @@ async function loadAndDisplayCircuit(layout, mode) {
     container.innerHTML = 'Loading...';
     try {
         const response = await fetch(`public/circuits/${layout}.svg`);
+        if (!response.ok) throw new Error(`Circuit image HTTP ${response.status}`);
         const svgText = await response.text();
         container.innerHTML = svgText;
         const svg = container.querySelector('svg');
-        if (!svg) return;
+        if (!svg) throw new Error('Circuit SVG missing');
         
         let origViewBox = svg.getAttribute('viewBox');
         if (!origViewBox) {

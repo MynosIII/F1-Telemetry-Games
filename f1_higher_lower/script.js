@@ -15,7 +15,9 @@ async function loadData() {
         seenDrivers = []; // Clear seen drivers when loading new mode
         const file = currentMode === 'wins' ? '../f1_wins.json' : '../f1_gps.json';
         const rawResponse = await fetch(file + '?t=' + new Date().getTime());
+        if (!rawResponse.ok) throw new Error('Driver data unavailable');
         drivers = await rawResponse.json();
+        if (!Array.isArray(drivers) || drivers.length < 2) throw new Error('Not enough drivers');
         
         let images = {};
         try {
@@ -44,7 +46,10 @@ async function loadData() {
         initGame();
     } catch (e) {
         console.error("Failed to load data", e);
-        document.body.innerHTML = "<h1>Failed to load driver data.</h1>";
+        let error = document.getElementById('data-error');
+        if (!error) { error = document.createElement('section'); error.id = 'data-error'; error.setAttribute('role','alert'); document.body.append(error); }
+        error.innerHTML = '<p>Failed to load driver data.</p><button type="button">Try again</button>';
+        error.querySelector('button').onclick = () => { error.remove(); loadData(); };
     }
 }
 
@@ -105,12 +110,12 @@ function updateUI() {
     // Left side
     document.getElementById('left-name').innerText = currentLeft.driver;
     document.getElementById('left-stat').innerText = currentMode === 'wins' ? currentLeft.wins : currentLeft.gps;
-    document.getElementById('left-bg').style.backgroundImage = `url('${currentLeft.image_url || ""}')`;
+    GameImages.portrait(document.getElementById("left-bg"), currentLeft.image_url, currentLeft.driver);
     
     // Right side
     document.getElementById('right-name').innerText = currentRight.driver;
     document.getElementById('right-stat').innerText = currentMode === 'wins' ? currentRight.wins : currentRight.gps;
-    document.getElementById('right-bg').style.backgroundImage = `url('${currentRight.image_url || ""}')`;
+    GameImages.portrait(document.getElementById("right-bg"), currentRight.image_url, currentRight.driver);
     
     // Hide stats initially
     document.getElementById('left-stat').classList.add('hidden');
@@ -175,7 +180,7 @@ function guess(choice) {
 }
 
 function shareScore() {
-    const text = `I scored ${score} on F1 Higher or Lower! Can you beat my score?`;
+    const text = GameI18n.t(`I scored ${score} on F1 Higher or Lower! Can you beat my score?`);
     if (navigator.share) {
         navigator.share({
             title: 'F1 Higher or Lower',
@@ -184,9 +189,9 @@ function shareScore() {
         }).catch(console.error);
     } else {
         navigator.clipboard.writeText(text + " " + window.location.href).then(() => {
-            alert("Score copied to clipboard!");
+            alert(GameI18n.t("Score copied to clipboard!"));
         }).catch(err => {
-            alert("Failed to copy score.");
+            alert(GameI18n.t("Failed to copy score."));
         });
     }
 }

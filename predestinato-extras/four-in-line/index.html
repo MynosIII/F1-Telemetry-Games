@@ -6,11 +6,15 @@
     <title>Four-in-line</title>
     <link rel="stylesheet" href="index.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/shared/game-theme.css">
+<script src="/shared/translations.js"></script>
+<script src="/shared/game-language.js"></script>
+<script src="/shared/game-images.js"></script>
 </head>
-<body>
+<body data-game="four-in-line">
     <main class="game-container">
         <header>
-            <h1>Four-in-line</h1>
+            <h1>Four-in-line</h1><p class="game-help">Two players share this board. Player 1 is red; Player 2 is white. Choose a column to drop a piece. Connect four horizontally, vertically or diagonally to win.</p>
             <div class="turn-indicator" id="turnIndicator">Player 1's Turn</div>
         </header>
         

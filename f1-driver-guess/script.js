@@ -89,7 +89,9 @@ function makeGuess(guessedDriver) {
     imgCell.style.padding = '0';
     if(guessedDriver.image) {
         const img = document.createElement('img');
-        img.src = guessedDriver.image;
+        img.src = GameImages.resolve(guessedDriver.image);
+        img.alt = guessedDriver.name;
+        img.referrerPolicy = "no-referrer";
         img.className = 'driver-image';
         // Handle image errors
         img.onerror = () => { img.style.display = 'none'; imgCell.textContent = guessedDriver.name.substring(0, 3); };
@@ -132,7 +134,7 @@ function makeGuess(guessedDriver) {
     // Add to top of container
     guessesContainer.insertBefore(row, guessesContainer.firstChild);
 
-    if (allCorrect) {
+    if (guessedDriver.name === targetDriver.name) {
         handleWin();
     }
 }

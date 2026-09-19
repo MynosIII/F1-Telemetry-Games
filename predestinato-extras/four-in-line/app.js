@@ -33,6 +33,10 @@ function renderBoard() {
         const columnEl = document.createElement('div');
         columnEl.classList.add('column');
         columnEl.dataset.col = c;
+        columnEl.setAttribute('role','button');
+        columnEl.tabIndex = 0;
+        columnEl.setAttribute('aria-label', 'Drop a piece in column ' + (c + 1));
+        columnEl.addEventListener('keydown', event => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); handleColumnClick(c); } });
         
         columnEl.addEventListener('click', () => handleColumnClick(c));
 

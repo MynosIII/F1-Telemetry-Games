@@ -5,33 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guess the F1 Driver</title>
     <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="/shared/game-theme.css">
+<script src="/shared/translations.js"></script>
+<script src="/shared/game-language.js"></script>
+<script src="/shared/game-images.js"></script>
 </head>
-<body>
+<body data-game="f1-driver-guess">
     <header>
         <h1>F1 Driver Guess</h1>
         <div class="stats-header">
             <div><span>Seasons</span><br><span>1950-2024</span></div>
             <div><span>Stat mode</span><br><span>All</span></div>
-            <div><span>Game mode</span><br><span>Daily</span></div>
+            <div><span>Game mode</span><br><span>Random</span></div>
             <div><span>Guesses</span><br><span id="guess-count">0</span></div>
         </div>
     </header>
 
     <main>
         <div class="search-container">
-            <input type="text" id="driver-input" placeholder="Type a driver's name..." autocomplete="off">
+            <input type="text" id="driver-input" aria-label="Driver name" placeholder="Type a driver's name..." autocomplete="off">
             <div id="autocomplete-list" class="autocomplete-items"></div>
         </div>
 
-        <div class="game-board">
+        <p class="game-help">Choose a driver. ▲ means the answer has a higher value; ▼ means lower. A white cell with ✓ is an exact match. Keep guessing until you find the driver.</p>
+<div class="game-board">
             <div class="board-header">
-                <div class="col driver-col">Drvr</div>
+                <div class="col driver-col">Driver</div>
                 <div class="col">First year</div>
                 <div class="col">Last year</div>
-                <div class="col">WCs</div>
+                <div class="col">Titles</div>
                 <div class="col">Wins</div>
-                <div class="col">Top 3s</div>
-                <div class="col">Pnts</div>
+                <div class="col">Podiums</div>
+                <div class="col">Points</div>
                 <div class="col">Poles</div>
                 <div class="col">GPs</div>
             </div>

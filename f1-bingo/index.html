@@ -6,14 +6,19 @@
     <title>F1 Bingo Matrix</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+<link rel="stylesheet" href="/shared/game-theme.css">
+<script src="/shared/translations.js"></script>
+<script src="/shared/game-language.js"></script>
+<script src="/shared/game-images.js"></script>
 </head>
-<body>
+<body data-game="f1-bingo">
     <div id="app">
         <header>
             <h1>F1 Bingo Matrix</h1>
             <div id="status-container">Failed Cells: <span id="failed-cells">0</span> / 3</div>
         </header>
-        <main>
+        <p class="game-help">Pick a cell and name a driver who meets both its row and column. Use each driver once. Three mistakes reveal a cell; three lost cells end the game.</p>
+<main>
             <div id="grid-container">
                 <!-- Grid will be generated here -->
             </div>

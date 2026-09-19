@@ -93,7 +93,7 @@ function processData(data) {
 
     let candidateTeammates = driversData.filter(d => d.years.length >= 10);
     candidateTeammates.forEach(d => {
-        allConditions.push({ type: 'raced_with', value: d.name, years: d.years, label: `Championship in the same year as ${d.name}` });
+        allConditions.push({ type: 'raced_with', value: d.name, years: d.years, label: `Shared a season with ${d.name}` });
     });
 }
 
@@ -248,6 +248,10 @@ function renderGrid() {
             cell.className = 'cell';
             cell.id = `cell-${r}-${c}`;
             cell.dataset.r = r;
+            cell.setAttribute('role','button');
+            cell.tabIndex = 0;
+            cell.setAttribute('aria-label', 'Choose row ' + (r + 1) + ', column ' + (c + 1));
+            cell.addEventListener('keydown', event => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); onCellClick(r,c); } });
             cell.dataset.c = c;
             
             let failsIndicator = document.createElement('div');
