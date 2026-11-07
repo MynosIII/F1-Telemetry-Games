@@ -18,6 +18,7 @@ const feedbackContainer = document.getElementById('feedback-container');
 const feedbackTitle = document.getElementById('feedback-title');
 const feedbackDesc = document.getElementById('feedback-desc');
 const btnNext = document.getElementById('btn-next');
+const shareContainer = document.getElementById('share-container');
 
 // Hardcoded Aliases
 const ALIASES = {
@@ -91,10 +92,12 @@ function showHome() {
     gameScreen.classList.remove('active');
     homeScreen.classList.add('active');
     feedbackContainer.classList.add('hidden');
+    gameScreen.classList.remove('round-over');
 }
 
 function nextRound() {
     feedbackContainer.classList.add('hidden');
+    gameScreen.classList.remove('round-over');
     
     if (currentMode === 'easy') {
         easyControls.classList.remove('hidden');
@@ -251,10 +254,25 @@ function showFeedback(isWin) {
     const fullName = currentCircuit.fullName || currentCircuit.name;
     feedbackDesc.innerHTML = isWin 
         ? `You guessed it right. It's <strong>${currentCircuit.name}</strong>.`
-        : `The correct answer was <strong>${currentCircuit.name}</strong>.<br><small>${fullName}</small><br><br>Final Streak: <strong>${score}</strong>`;
+        : `The correct answer was <strong>${currentCircuit.name}</strong>.<br><small>${fullName}</small><span class="final-streak">Final Streak: <strong>${score}</strong></span>`;
         
     btnNext.textContent = isWin ? 'Next Circuit' : 'Play Again';
     btnNext.onclick = isWin ? nextRound : () => startGame(currentMode);
+
+    gameScreen.classList.toggle('round-over', !isWin);
+    shareContainer.classList.toggle('hidden', isWin);
+    if (!isWin && window.GameShare) {
+        const finalScore = score;
+        const modeNames = {
+            easy: { es: 'modo fácil', en: 'easy mode' },
+            hard: { es: 'modo difícil', en: 'hard mode' },
+            '3corners': { es: 'modo 3 curvas', en: '3 corners mode' }
+        }[currentMode];
+        GameShare.render(shareContainer, {
+            es: `Acerté ${finalScore} ${finalScore === 1 ? 'circuito seguido' : 'circuitos seguidos'} en Adiviná el circuito (${modeNames.es}). ¿Me superás?`,
+            en: `I guessed ${finalScore} ${finalScore === 1 ? 'circuit' : 'circuits'} in a row on Circuit Guesser (${modeNames.en}). Can you beat it?`
+        });
+    }
 }
 
 function updateScore(newScore) {
