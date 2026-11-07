@@ -372,6 +372,12 @@ function endGame(win) {
         }
     }
     gameOverModal.classList.remove('hidden');
+    if (window.GameShare) {
+        const hits = correctCells;
+        GameShare.render(document.getElementById('share-container'), win
+            ? { es: `Completé el F1 Bingo con ${hits}/9 casillas. ¿Te animás?`, en: `I finished F1 Bingo with ${hits}/9 squares. Your turn?` }
+            : { es: `Saqué ${hits}/9 en el F1 Bingo. ¿Lo superás?`, en: `I got ${hits}/9 on F1 Bingo. Can you beat it?` });
+    }
 }
 
 playAgainBtn.addEventListener('click', () => {

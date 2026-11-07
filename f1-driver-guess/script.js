@@ -142,6 +142,13 @@ function makeGuess(guessedDriver) {
 function handleWin() {
     input.disabled = true;
     winMessage.classList.remove('hidden');
+    if (window.GameShare) {
+        const tries = guessCount;
+        GameShare.render(document.getElementById('share-container'), {
+            es: `Adiviné el piloto de F1 en ${tries} ${tries === 1 ? 'intento' : 'intentos'}. ¿Lo sacás en menos?`,
+            en: `I guessed the F1 driver in ${tries} ${tries === 1 ? 'try' : 'tries'}. Can you do it in fewer?`
+        });
+    }
 }
 
 playAgainBtn.addEventListener('click', initGame);

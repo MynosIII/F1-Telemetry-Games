@@ -179,26 +179,19 @@ function guess(choice) {
     }
 }
 
-function shareScore() {
-    const text = GameI18n.t(`I scored ${score} on F1 Higher or Lower! Can you beat my score?`);
-    if (navigator.share) {
-        navigator.share({
-            title: 'F1 Higher or Lower',
-            text: text,
-            url: window.location.href,
-        }).catch(console.error);
-    } else {
-        navigator.clipboard.writeText(text + " " + window.location.href).then(() => {
-            alert(GameI18n.t("Score copied to clipboard!"));
-        }).catch(err => {
-            alert(GameI18n.t("Failed to copy score."));
-        });
-    }
+function renderShare() {
+    if (!window.GameShare) return;
+    const finalScore = score;
+    GameShare.render(document.getElementById('share-container'), {
+        es: `Hice una racha de ${finalScore} en F1 Higher or Lower. ¿Me superás?`,
+        en: `I got a streak of ${finalScore} on F1 Higher or Lower. Can you beat it?`
+    });
 }
 
 function gameOver() {
     document.getElementById('final-score').innerText = score;
     document.getElementById('game-over').classList.remove('hidden');
+    renderShare();
 }
 
 function startGame(mode) {

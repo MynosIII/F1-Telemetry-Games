@@ -9,6 +9,7 @@
 <script src="/shared/translations.js"></script>
 <script src="/shared/game-language.js"></script>
 <script src="/shared/game-images.js"></script>
+<script src="/shared/game-share.js"></script>
 </head>
 <body data-game="f1_higher_lower">
     <div class="top-bar" id="top-bar-text">Click the one with more wins</div>
@@ -44,8 +45,8 @@
             <div class="game-over-buttons">
                 <button class="btn btn-play-again" onclick="initGame()">Play Again</button>
                 <button class="btn btn-mode" onclick="backToMenu()">Back to Menu</button>
-                <button class="btn btn-share" onclick="shareScore()">Share Score</button>
             </div>
+            <div id="share-container"></div>
         </div>
 
         <div class="main-menu-screen" id="main-menu">
